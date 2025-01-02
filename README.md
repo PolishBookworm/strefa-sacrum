@@ -1,4 +1,4 @@
-# Strefa sacrum
+# Strefa Sacrum
 
 Using Kivy to make an app facilitating the finding of Mass hours in the Resovian diocese (Poland).
 
