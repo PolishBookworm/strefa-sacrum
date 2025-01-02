@@ -1,1 +1,7 @@
 # Strefa sacrum
+
+Using Kivy to make an app facilitating the finding of Mass hours in the Resovian diocese (Poland).
+
+Chcemy stworzyć aplikację-wyszukiwarkę mszy świętych dla mieszkańców diecezji rzeszowskiej: umożliwi im ona dowiedzenie się o możliwości przyjęcia sakramentów czy znalezienie wspólnoty. Zwalczamy dezinformację skutkującą rezygnacją z wiary, udostępniając prawdziwe informacje w przystępnej formie.
+
+Strefa Sacrum to projekt aplikacji dedykowanej diecezji rzeszowskiej. Pomoże ona odnaleźć godziny mszy świętych, spowiedzi czy innych nabożeństw. Oszczędzi nużących wyszukiwań, pozwalając skupić się na tym, co najważniejsze: na istocie Eucharystii. Dedykowana jest katolikom uczestniczącym we mszy świętej poza swoją parafią - pracującym lub uczącym się w innym mieście, podróżującym po diecezji. Zauważyliśmy, że częstym problemem takich osób jest to, że mimo szczerych chęci nie udaje im się uczestniczyć np. we mszy świętej pierwszopiątkowej. Powodowane jest to trudnym dostępem do informacji: niektóre dane są nieaktualne, niekompletne, rozrzucone po wielu różnych stronach internetowych. Dlatego wychodzimy ludziom naprzeciw: aplikacja Strefa Sacrum to połączenie nowoczesnych technologii ze sferą duchową, aby przyczynić się do rozwiązania problemu dezinformacji. Łączymy to, co najlepsze, z obu światów, aby profanum naszego codziennego życia nie przeszkadzało, a pomagało w dążeniu ku sacrum.

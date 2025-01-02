@@ -62,14 +62,6 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
         new file:   przegralam.txt
 
-
-User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
-$ git commit
-Aborting commit due to empty commit message.
-
-User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
-$ # tego wyżej nie ma
-
 User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
 $ git commit -m "Initial commit"
 [master (root-commit) 5068845] Initial commit
@@ -184,50 +176,6 @@ Author: Szopx <155494349+Szopx@users.noreply.github.com>
 Date:   Thu Jan 2 14:05:07 2025 +0100
 
     Initial commit
-
-User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
-$ git config
-usage: git config [<options>]
-
-Config file location
-    --global              use global config file
-    --system              use system config file
-    --local               use repository config file
-    --worktree            use per-worktree config file
-    -f, --file <file>     use given config file
-    --blob <blob-id>      read config from given blob object
-
-Action
-    --get                 get value: name [value-regex]
-    --get-all             get all values: key [value-regex]
-    --get-regexp          get values for regexp: name-regex [value-regex]
-    --get-urlmatch        get value specific for the URL: section[.var] URL
-    --replace-all         replace all matching variables: name value [value_regex]
-    --add                 add a new variable: name value
-    --unset               remove a variable: name [value-regex]
-    --unset-all           remove all matches: name [value-regex]
-    --rename-section      rename section: old-name new-name
-    --remove-section      remove a section: name
-    -l, --list            list all
-    -e, --edit            open an editor
-    --get-color           find the color configured: slot [default]
-    --get-colorbool       find the color setting: slot [stdout-is-tty]
-
-Type
-    -t, --type <>         value is given this type
-    --bool                value is "true" or "false"
-    --int                 value is decimal number
-    --bool-or-int         value is --bool or --int
-    --path                value is a path (file or directory name)
-    --expiry-date         value is an expiry date
-
-Other
-    -z, --null            terminate values with NUL byte
-    --name-only           show variable names only
-    --includes            respect include directives on lookup
-    --show-origin         show origin of config (file, standard input, blob, command line)
-    --show-scope          show scope of config (worktree, local, global, system, command)
-    --default <value>     with --get, use default value when missing entry
 
 
 User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
@@ -365,14 +313,7 @@ gh.txt  loremipsum.py  przegralam.txt  superkalifradalistodekspialitycznie.txt
 
 User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
 $ cd ../
-
-User@DESKTOP-NNUEVGK MINGW64 ~/Documents
-$ git clone https://github.com/PolishBookworm/strefa-sacrum.git
-Cloning into 'strefa-sacrum'...
-fatal: protocol '┬ľ┬ľ┬ľ┬ľ┬ľ┬ľ┬ľ┬ľhttps' is not supported
-
-User@DESKTOP-NNUEVGK MINGW64 ~/Documents
-$ ^C
+# powrót do katalogu wyżej
 
 User@DESKTOP-NNUEVGK MINGW64 ~/Documents
 $ git clone https://github.com/PolishBookworm/strefa-sacrum.git
@@ -385,8 +326,7 @@ Unpacking objects: 100% (3/3), 1.71 KiB | 92.00 KiB/s, done.
 
 User@DESKTOP-NNUEVGK MINGW64 ~/Documents
 $ ls
- Audacity/    'Electronic Arts'/  'Moja muzyka'@  'Moje wideo'@          'Niestandardowe szablony pakietu Office'/   Revolting-vectors/   strefa-sfera-sacrum-sacrum/
- desktop.ini   GitHub/            'Moje obrazy'@  'Moje źródła danych'/   nowy2xd.docx                               strefa-sacrum/
+inne pliki    strefa-sacrum/
 
 User@DESKTOP-NNUEVGK MINGW64 ~/Documents
 $ cd strefa-sacrum/
