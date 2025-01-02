@@ -5,11 +5,11 @@ from kivy.app import App
 from kivy.uix.label import Label
 
 
-class MyApp(App):
+class SacrumApp(App):
 
     def build(self):
-        return Label(text='Hello world')
+        return Label(text="Strefa Sacrum")
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    SacrumApp().run()
