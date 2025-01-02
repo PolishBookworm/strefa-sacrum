@@ -1,0 +1,504 @@
+
+User@DESKTOP-NNUEVGK MINGW64 ~
+$ ls
+'3D Objects'/
+ ansel/
+ AppData/
+ Contacts/
+ Cookies@
+'Dane aplikacji'@
+ Desktop/
+ Documents/
+ Downloads/
+ Favorites/
+ IntelGraphicsProfiles/
+ Links/
+'Menu Start'@
+'Moje dokumenty'@
+ Music/
+ NetHood@
+ NTUSER.DAT
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+ ntuser.ini
+ OneDrive/
+ Pictures/
+ PrintHood@
+ PycharmProjects/
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+ Szablony@
+'Ustawienia lokalne'@
+ Videos/
+
+User@DESKTOP-NNUEVGK MINGW64 ~
+$ cd Documents/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ ls
+ Audacity/   desktop.ini  'Electronic Arts'/   GitHub/  'Moja muzyka'@  'Moje obrazy'@  'Moje wideo'@  'Moje źródła danych'/  'Niestandardowe szablony pakietu Office'/   nowy2xd.docx   Revo
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ mkdir strefa-sfera-sacrum-sacrum/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ ls
+ Audacity/    'Electronic Arts'/  'Moja muzyka'@  'Moje wideo'@          'Niestandardowe szablony pakietu Office'/   Revolting-vectors/
+ desktop.ini   GitHub/            'Moje obrazy'@  'Moje źródła danych'/   nowy2xd.docx                               strefa-sfera-sacrum-sacrum/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ cd strefa-sfera-sacrum-sacrum/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum
+$ ls
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum
+$ git init
+Initialized empty Git repository in C:/Users/User/Documents/strefa-sfera-sacrum-sacrum/.git/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ ll
+total 0
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ ll
+total 0
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ touch przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ ls
+przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        przegralam.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git add przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   przegralam.txt
+
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ # tego wyżej nie ma
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 5068845] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   przegralam.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ touch loremipsum.py
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   przegralam.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        loremipsum.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git add .
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   loremipsum.py
+        modified:   przegralam.txt
+
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git restore --staged przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   loremipsum.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   przegralam.txt
+
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git commit -m "Python code"
+[master d41af52] Python code
+ 1 file changed, 1 insertion(+)
+ create mode 100644 loremipsum.py
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   przegralam.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git add przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git commit -m "coś mi się przypomniało"
+[master 1dc7d7c] co┼Ť mi si─Ö przypomnia┼éo
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git log
+commit 1dc7d7c457a8febfc1ffe964307082275c8450c5 (HEAD -> master)
+Author: Szopx <155494349+Szopx@users.noreply.github.com>
+Date:   Thu Jan 2 14:10:02 2025 +0100
+
+    coś mi się przypomniało
+
+commit d41af526457a2da89dc4e0ce012b48dfdf8ad356
+Author: Szopx <155494349+Szopx@users.noreply.github.com>
+Date:   Thu Jan 2 14:07:18 2025 +0100
+
+    Python code
+
+commit 5068845bbec16ec88a06a823b22650a57eb63722
+Author: Szopx <155494349+Szopx@users.noreply.github.com>
+Date:   Thu Jan 2 14:05:07 2025 +0100
+
+    Initial commit
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git branch
+* master
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git branch menu
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git checkout menu
+Switched to branch 'menu'
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git status
+On branch menu
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ touch superkalifradalistodekspialitycznie.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git status
+On branch menu
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        superkalifradalistodekspialitycznie.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git add .
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git commit -m "Whatever"
+[menu 62b6d5b] Whatever
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 superkalifradalistodekspialitycznie.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git status
+On branch menu
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ ls
+loremipsum.py  przegralam.txt  superkalifradalistodekspialitycznie.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git checkout master
+Switched to branch 'master'
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ ls
+loremipsum.py  przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git branch logo
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git checkout logo
+Switched to branch 'logo'
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (logo)
+$ git branch edfgb
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (logo)
+$ git checkout master
+Switched to branch 'master'
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ touch gh.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ ls
+gh.txt  loremipsum.py  przegralam.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        gh.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git add .
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git commit -m "test"
+[master 355a947] test
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 gh.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git checkout menu
+Switched to branch 'menu'
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ ls
+loremipsum.py  przegralam.txt  superkalifradalistodekspialitycznie.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (menu)
+$ git checkout master
+Switched to branch 'master'
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git branch festure
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git merge festure
+Already up to date.
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ git merge menu
+Merge made by the 'recursive' strategy.
+ superkalifradalistodekspialitycznie.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 superkalifradalistodekspialitycznie.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ ls
+gh.txt  loremipsum.py  przegralam.txt  superkalifradalistodekspialitycznie.txt
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sfera-sacrum-sacrum (master)
+$ cd ../
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ git clone https://github.com/PolishBookworm/strefa-sacrum.git
+Cloning into 'strefa-sacrum'...
+fatal: protocol '┬ľ┬ľ┬ľ┬ľ┬ľ┬ľ┬ľ┬ľhttps' is not supported
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ ^C
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ git clone https://github.com/PolishBookworm/strefa-sacrum.git
+Cloning into 'strefa-sacrum'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1.71 KiB | 92.00 KiB/s, done.
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ ls
+ Audacity/    'Electronic Arts'/  'Moja muzyka'@  'Moje wideo'@          'Niestandardowe szablony pakietu Office'/   Revolting-vectors/   strefa-sfera-sacrum-sacrum/
+ desktop.ini   GitHub/            'Moje obrazy'@  'Moje źródła danych'/   nowy2xd.docx                               strefa-sacrum/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents
+$ cd strefa-sacrum/
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ ls
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ touch main.py
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git add .
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git commit -m "Added main.py"
+[master b0544a3] Added main.py
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 main.py
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 72.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/PolishBookworm/strefa-sacrum.git
+   d107133..b0544a3  master -> master
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 971 bytes | 34.00 KiB/s, done.
+From https://github.com/PolishBookworm/strefa-sacrum
+   b0544a3..65dd185  master     -> origin/master
+Updating b0544a3..65dd185
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ ls
+main.py  README.md
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$ # zanim zrobicie pusha, zawsze róbcie pulla
+
+User@DESKTOP-NNUEVGK MINGW64 ~/Documents/strefa-sacrum (master)
+$
