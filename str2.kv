@@ -1,0 +1,146 @@
+#:kivy 2.3.1
+
+<ScreenZwei>:
+    FloatLayout:
+
+#ten_złoty_pasek_na_górze
+        canvas:
+            Color:
+                rgba: root.kolor_akcentu
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        ScrollView:
+            id: lajout
+            #do_scroll_x: False
+            #do_scroll_y: True
+            size_hint: 1, None
+
+#tutaj_koktent
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: 'Tertiam qui ipsorum lingua Celtae nostra Galli appellantur\n' * 314  # Repeat text to make it scrollable
+                    size_hint_y: None  # Allow the label to have a specific height
+                    color: root.kolor_tekstu
+                    height: self.texture_size[1]  # Set height based on the label's content
+                    text_size: self.width, None
+                    padding: 10, 10
+
+                    canvas.before:
+                        Color:
+                            rgba: root.kolor_tla
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+
+
+#tło_pod_opcjami
+        FloatLayout:
+            id: opcie
+
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: None, None
+            width: root.szerokosc_opcji
+
+            canvas:
+                Color:
+                    rgba: root.kolor_tla[0], root.kolor_tla[1], root.kolor_tla[2], root.menu_wi
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+#opcje
+        BoxLayout:
+            id: pudlo
+
+            disabled: root.menu_wl
+            opacity: root.menu_wi
+            orientation: "vertical"
+
+            size_hint: None, 1
+            width: root.szerokosc_opcji
+            height: root.wysokosc_menu
+
+
+            Label:
+                size_hint: 1, None
+                height: "48dp"
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 0"
+                color: root.kolor_tekstu
+                kart: 0
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 1"
+                color: root.kolor_tekstu
+                kart: 1
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, .1
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 2"
+                color: root.kolor_tekstu
+                kart: 2
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 3"
+                color: root.kolor_tekstu
+                kart: 3
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 4"
+                color: root.kolor_tekstu
+                kart: 4
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 5"
+                color: root.kolor_tekstu
+                kart: 5
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 6"
+                color: root.kolor_tekstu
+                kart: 6
+                on_press: root.karta(self.kart)
+            Button:
+                background_color: 0, 0, 0, 0
+                size_hint: 1, None
+                height: root.wysokosc_opcji
+                text: "Funkcja 7"
+                color: root.kolor_tekstu
+                kart: 7
+                on_press: root.karta(self.kart)
+
+#trzy_kreski -> włącz/wyłącz
+        ToggleButton:
+            size_hint: None, None
+            size: "48dp", "48dp"
+            top: root.top
+            on_state: root.wlacznik_menu(self)
+            background_down: "menu_button.png"
+            background_normal: "menu_button.png"
