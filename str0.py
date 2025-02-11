@@ -15,6 +15,41 @@ from kivy.core.window import Window
 
 Builder.load_file('str0.kv')
 
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Editing foreword (more in main.py, str0.kv):
+    # >Owszem, mogę w pythonie robić multiline comments ale bardziej
+    #mi się w Pycharmie podoba kolor tych hashtagowych, oraz wiem,
+    #że mogę zmienić to w ustawieniach ale mi się nie chce
+
+    # >Aplikację uruchamiamy z /main.py/
+
+    # >Wygląd podstrony X definiujemy w /strX.kv/
+    #a jej funkcje w /strX.py/
+
+    # >Wprowadzając zmienną wspólną dla większości podstron
+    #definiujemy ją w /main.py/ zgodnie z poradnikiem w /main.py/
+
+    # >By dodać/usunąć podstronę X zobacz poradnik w /str0.kv/
+
+    # >Dla strony X w //strX.py\class ScreenX// powinny znajdować się wszystkie
+    #zmienne z //main.py\class MyApp\def build\sm.add_widget(ScreenX)//
+    #z odpowiednią właściwością (Property)
+
+    # >Funkcje /def karta/, /def wlacznik_menu/ oraz /def on_size/
+    #w /class ScreenX/ są niezbędne do prawidłowego funkcjonowania
+    #podstrony więc ich nie dotykamy
+
+    # >Rekomenduje się dodawanie funkcji w /class ScreenX/ po funkcji /def on_size/
+    #oraz zmiennych ogólnych w /class ScreenX/ przed funkcją /def karta/
+
+    # >Jakby coś mocno nie chciało działać to mówić
+
+#Dziękuję za uwagę, MZ
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
 class ScreenNull(Screen):
 
     menu_wl = BooleanProperty()
@@ -24,9 +59,19 @@ class ScreenNull(Screen):
     szerokosc_opcji = StringProperty()
     wysokosc_menu = NumericProperty()
 
+    czcionka = StringProperty()
     kolor_tekstu = ListProperty()
     kolor_tla = ListProperty()
     kolor_akcentu = ListProperty()
+
+    s0_name = StringProperty()
+    s1_name = StringProperty()
+    s2_name = StringProperty()
+    s3_name = StringProperty()
+    s4_name = StringProperty()
+    s5_name = StringProperty()
+    s6_name = StringProperty()
+    s7_name = StringProperty()
 
     def karta(self, k):
         app = App.get_running_app()
