@@ -14,6 +14,8 @@ from str5 import ScreenFuenf
 from str6 import ScreenSechs
 from str7 import ScreenSieben
 
+import os
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Editing foreword (more in str0.py, str0.kv):
@@ -55,7 +57,7 @@ class MyApp(App):
         self.wysokosc_opcji = "48dp"
         self.szerokosc_opcji = "144dp"
         self.wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->szerokość pojedyńczej opcji w dp, +48-> szerokość menu_button w dp
-        self.czcionka = "our_resources\wingding.ttf"
+        self.czcionka = os.path.join("our_resources","wingding.ttf")
         self.kolor_tekstu = [.2, .15686, .07059, 1]
         self.kolor_tla = [.97, .97, .97, 1]
         self.kolor_akcentu = [.79216, .64314, .31765, 1]
