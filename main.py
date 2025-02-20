@@ -62,14 +62,14 @@ class StrefaSacrumApp(App):
         self.kolor_tla = [.97, .97, .97, 1]
         self.kolor_akcentu = [.79216, .64314, .31765, 1]
 
-        self.s0_name = "Null"
-        self.s1_name = "Eins"
-        self.s2_name = "Zwei"
-        self.s3_name = "Drei"
-        self.s4_name = "Vier"
-        self.s5_name = "Fuenf"
-        self.s6_name = "Sechs"
-        self.s7_name = "Sieben"
+        self.s0_name = "Strona główna"
+        self.s1_name = "Znajdź Mszę"
+        self.s2_name = "Znajdź parafię"
+        self.s3_name = "Kalendarz liturgiczny diecezji"
+        self.s4_name = "O diecezji"
+        self.s5_name = "Sponsorzy i partnerzy"
+        self.s6_name = "O nas"
+        self.s7_name = "<parafie>" # to trzeba będzie usunąć z menu, ale na razie mi się nie chce, zrobimy to jak ogarniemy kod
         #koniec bloku Z
 
 
