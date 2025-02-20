@@ -47,7 +47,7 @@ import os
 
 
 
-class MyApp(App):
+class StrefaSacrumApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -240,4 +240,4 @@ class MyApp(App):
         return sm
 
 if __name__ == '__main__':
-    MyApp().run()
+    StrefaSacrumApp().run()
