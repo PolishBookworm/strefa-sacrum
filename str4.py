@@ -1,3 +1,7 @@
+# kalendarz liturgiczny diecezji
+# na najbliższy tydzień + link?
+# https://diecezja.rzeszow.pl/kalendarz-liturgiczny/
+
 import kivy
 kivy.require('2.3.1')
 from kivy.app import App

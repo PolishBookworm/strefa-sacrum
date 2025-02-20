@@ -65,11 +65,11 @@ class StrefaSacrumApp(App):
         self.s0_name = "Strona główna"
         self.s1_name = "Znajdź Mszę"
         self.s2_name = "Znajdź parafię"
-        self.s3_name = "Kalendarz liturgiczny diecezji"
-        self.s4_name = "O diecezji"
-        self.s5_name = "Sponsorzy i partnerzy"
-        self.s6_name = "O nas"
-        self.s7_name = "<parafie>" # to trzeba będzie usunąć z menu, ale na razie mi się nie chce, zrobimy to jak ogarniemy kod
+        self.s3_name = "Mapa diecezji"
+        self.s4_name = "Kalendarz liturgiczny diecezji"
+        self.s5_name = "O diecezji"
+        self.s6_name = "Sponsorzy i partnerzy"
+        self.s7_name = "O nas"
         #koniec bloku Z
 
 

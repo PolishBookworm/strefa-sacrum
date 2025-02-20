@@ -1,5 +1,5 @@
-# kalendarz liturgiczny diecezji
-
+# mapa diecezji
+ 
 import kivy
 kivy.require('2.3.1')
 from kivy.app import App
