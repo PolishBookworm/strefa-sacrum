@@ -1,0 +1,102 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Editing foreword (more in main.py, str0.py):
+
+    # >Wprowadzając zmienną wspólną dla większości podstron
+    #definiujemy ją w /main.py/ zgodnie z poradnikiem w /main.py/
+    #w .kv używamy root.
+
+    # >Funkcje potrzebne dla strony X dodajemy w /strX.py/
+
+    # >Kontent podstrony dodajemy tylko w /BoxLayout/ (można zmienić na inny Layout) w /#tutaj_koktent/
+
+    # >Zasada trzech muszkieterów:
+        #Jeżeli wprowadzamy nowy tekst to pamiętamy o czcionce i kolorze:
+            #text: "tekst"
+            #font_name: root.czcionka
+            #color: root.kolor_tekstu
+
+    # >By dodać/usunąć podstronę X należy:
+        #Apeluję o zachowanie niemieckiej numeracji
+        #Zedytować /BoxLayout/ w /#opcje/ we wszystkich plikach .kv
+        #Dodać/usunąć: sX_name = StringProperty(); we wszystkich plikach .py niebędących /main.py/
+        #W /main.py/:
+            #Dodać/usunąć: from strX import ScreenX
+            #Dodać w/usunąć z //class StrefaSacrumApp\def __init__//: self.sX_name = "nazwa"
+            #Zmienić w //class StrefaSacrumApp\def __init__//: self.wysokosc_menu
+            #Do/z //class StrefaSacrumApp\def build\kwargs// dodać/usunąć: sX_name = self.sX_name,
+            #Dodać w/usunąć z //class StrefaSacrumApp\def build//: sm.add_widget(ScreenX(name='strX',**kwargs))
+        #W przypadku dodawania strony warto skopiować kod .py i .kv z już istniejącej
+
+    # >Rekomenduje się korzystanie z kolorów zdefiniowanych w main.py:
+        #Główny kolor: self.kolor_tla (biały)
+        #Różnicujący kolor: 0, 0, 0, .1 nad self.kolor_tla (jasny szary)
+        #Akcentujący kolor: self.kolor_akcentu (złoty)
+        #Kolor tekstu/innych ciemniejszych elementów: root.kolor_tekstu (prawie czarny)
+
+    # >Widoczne w opcjach nazwy podstron, ogólną czcionkę, wysokość
+    #oraz szerokość opcji można zmienić w //main.py\class StrefaSacrumApp\def __init__//
+
+    # >Jakby coś mocno nie chciało działać to mówić
+
+#Dziękuję za uwagę, MZ
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Editing foreword (more in str0.py, str0.kv):
+    # >Owszem, mogę w pythonie robić multiline comments ale bardziej
+    #mi się w Pycharmie podoba kolor tych hashtagowych, oraz wiem,
+    #że mogę zmienić to w ustawieniach ale mi się nie chce
+
+    # >Aplikację uruchamiamy z /main.py/
+
+    # >Zmienne w /#blok Z/ w //class StrefaSacrumApp\def __init__// są niezbędne do prawidłowego
+    #funkcjonowania wszystkich podstron więc ich nie dotykamy
+
+    # >Wygląd podstrony X definiujemy w /strX.kv/
+    #a jej funkcje w /strX.py/
+
+    # >Wprowadzając zmienną Y wspólną dla większości podstron:
+        #Definiujemy ją w //class StrefaSacrumApp\def __init__// jako self.Y = wartość
+        #Dla każdej podstrony X używającej zmiennej Y:
+            #W //strX.py\class ScreenX// definiujemy pustą zmienną Y z odpowiednią właściwością (Property)
+            #W //main.py\class StrefaSacrumApp\def build\sm.add_widget(ScreenX) dodajemy: Y = self.Y
+        #Gratulacle! Zmienna jest gotowa do użytku w strX.py jako self.Y oraz w strX.kv jako root.Y
+
+    # >By dodać/usunąć podstronę X zobacz poradnik w /str0.kv/
+
+    # >Jakby coś mocno nie chciało działać to mówić
+
+#Dziękuję za uwagę, MZ
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Editing foreword (more in main.py, str0.kv):
+    # >Owszem, mogę w pythonie robić multiline comments ale bardziej
+    #mi się w Pycharmie podoba kolor tych hashtagowych, oraz wiem,
+    #że mogę zmienić to w ustawieniach ale mi się nie chce
+
+    # >Aplikację uruchamiamy z /main.py/
+
+    # >Wygląd podstrony X definiujemy w /strX.kv/
+    #a jej funkcje w /strX.py/
+
+    # >Wprowadzając zmienną wspólną dla większości podstron
+    #definiujemy ją w /main.py/ zgodnie z poradnikiem w /main.py/
+
+    # >By dodać/usunąć podstronę X zobacz poradnik w /str0.kv/
+
+    # >Dla strony X w //strX.py\class ScreenX// powinny znajdować się wszystkie
+    #zmienne z //main.py\class StrefaSacrumApp\def build\sm.add_widget(ScreenX)//
+    #z odpowiednią właściwością (Property)
+
+    # >Funkcje /def karta/, /def wlacznik_menu/ oraz /def on_size/
+    #w /class ScreenX/ są niezbędne do prawidłowego funkcjonowania
+    #podstrony więc ich nie dotykamy
+
+    # >Rekomenduje się dodawanie funkcji w /class ScreenX/ po funkcji /def on_size/
+    #oraz zmiennych ogólnych w /class ScreenX/ przed funkcją /def karta/
+
+    # >Jakby coś mocno nie chciało działać to mówić
+
+#Dziękuję za uwagę, MZ
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

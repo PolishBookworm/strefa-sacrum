@@ -18,7 +18,7 @@ from kivy.core.window import Window
 Builder.load_file('str3.kv')
 
 
-#visit main.py, str0.py, str0.kv for editing foreword
+# see editing_foreword.txt
 
 
 class ScreenDrei(Screen):

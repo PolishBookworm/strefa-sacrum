@@ -1,50 +1,7 @@
 #:kivy 2.3.1
 #:import join os.path.join
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Editing foreword (more in main.py, str0.py):
-
-    # >Wprowadzając zmienną wspólną dla większości podstron
-    #definiujemy ją w /main.py/ zgodnie z poradnikiem w /main.py/
-    #w .kv używamy root.
-
-    # >Funkcje potrzebne dla strony X dodajemy w /strX.py/
-
-    # >Kontent podstrony dodajemy tylko w /BoxLayout/ (można zmienić na inny Layout) w /#tutaj_koktent/
-
-    # >Zasada trzech muszkieterów:
-        #Jeżeli wprowadzamy nowy tekst to pamiętamy o czcionce i kolorze:
-            #text: "tekst"
-            #font_name: root.czcionka
-            #color: root.kolor_tekstu
-
-    # >By dodać/usunąć podstronę X należy:
-        #Apeluję o zachowanie niemieckiej numeracji
-        #Zedytować /BoxLayout/ w /#opcje/ we wszystkich plikach .kv
-        #Dodać/usunąć: sX_name = StringProperty(); we wszystkich plikach .py niebędących /main.py/
-        #W /main.py/:
-            #Dodać/usunąć: from strX import ScreenX
-            #Dodać w/usunąć z //class StrefaSacrumApp\def __init__//: self.sX_name = "nazwa"
-            #Zmienić w //class StrefaSacrumApp\def __init__//: self.wysokosc_menu
-            #Do/z każdego /sm.add_widget(ScreenN)/ z //class StrefaSacrumApp\def build// dodać/usunąć: sX_name = self.sX_name,
-            #Dodać w/usunąć z //class StrefaSacrumApp\def build//: sm.add_widget(ScreenX) ze wszystkimi
-            #właściwościami /sm.add_widget(ScreenN)/ zmieniając name='strN' na name='strX'
-        #W przypadku dodawania strony warto skopiować kod .py i .kv z już istniejącej
-
-    # >Rekomenduje się korzystanie z kolorów zdefiniowanych w main.py:
-        #Główny kolor: self.kolor_tla (biały)
-        #Różnicujący kolor: 0, 0, 0, .1 nad self.kolor_tla (jasny szary)
-        #Akcentujący kolor: self.kolor_akcentu (złoty)
-        #Kolor tekstu/innych ciemniejszych elementów: root.kolor_tekstu (prawie czarny)
-
-    # >Widoczne w opcjach nazwy podstron, ogólną czcionkę, wysokość
-    #oraz szerokość opcji można zmienić w //main.py\class StrefaSacrumApp\def __init__//
-
-    # >Jakby coś mocno nie chciało działać to mówić
-
-#Dziękuję za uwagę, MZ
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+# see editing_foreword.txt
 
 <ScreenNull>:
     FloatLayout:
