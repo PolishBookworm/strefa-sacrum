@@ -9,11 +9,13 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.widget import Widget
 from kivy.uix.scrollview import ScrollView
-from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty
+from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty, ObjectProperty
 from kivy.lang import Builder
 from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
+
+from kivy_garden.mapview import MapView
 
 Builder.load_file('str3.kv')
 
@@ -44,6 +46,13 @@ class ScreenDrei(Screen):
     s6_name = StringProperty()
     s7_name = StringProperty()
 
+    mapview = ObjectProperty(None)
+    
+    # def __init__(self, *args, **kwargs):
+    #     super.__init__(self, *args, **kwargs)
+    #     mapview = MapView(zoom=5,lat=50.0412, lon=21.9991)
+    #     self.add_widget(mapview)
+
 
     def karta(self, k):
         app = App.get_running_app()
@@ -69,3 +78,5 @@ class ScreenDrei(Screen):
         opcie.height = wys
         lajout.height = wys
         pudlo.pos = (0, y_position)
+
+        # print(f"Map center: {self.mapview.lat}, {self.mapview.lon}")

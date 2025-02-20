@@ -6,6 +6,8 @@
 
 
 <ScreenDrei>:
+    mapview: mapview
+
     FloatLayout:
 
 #ten_złoty_pasek_na_górze
@@ -16,33 +18,41 @@
                 pos: self.pos
                 size: self.size
 
-        ScrollView:
+        # ScrollView:
+        FloatLayout: # ScrollView collides with map interaction
             id: lajout
             #do_scroll_x: False
             #do_scroll_y: True
             size_hint: 1, None
 
 #tutaj_koktent
+            # FloatLayout:
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
+                # size_hint_y: None
+                size_hint: (1,1)
+                # height: self.minimum_height
 
-                Label:
-                    text: 'Ave Caesar morituri te salutant\n' * 314  # Repeat text to make it scrollable
-                    font_name: root.czcionka
-                    color: root.kolor_tekstu
-                    text_size: self.width, None
-                    size_hint_y: None  # Allow the label to have a specific height
-                    height: self.texture_size[1]  # Set height based on the label's content
-                    padding: 10, 10
+                MapView:
+                    id: mapview
+                    on_parent: self.center_on(50.0412, 21.9991)
+                    zoom: 13
 
-                    canvas.before:
-                        Color:
-                            rgba: root.kolor_tla
-                        Rectangle:
-                            pos: self.pos
-                            size: self.size
+                # Label:
+                #     text: 'Ave Caesar morituri te salutant\n' * 314  # Repeat text to make it scrollable
+                #     font_name: root.czcionka
+                #     color: root.kolor_tekstu
+                #     text_size: self.width, None
+                #     size_hint_y: None  # Allow the label to have a specific height
+                #     height: self.texture_size[1]  # Set height based on the label's content
+                #     padding: 10, 10
+
+                #     canvas.before:
+                #         Color:
+                #             rgba: root.kolor_tla
+                #         Rectangle:
+                #             pos: self.pos
+                #             size: self.size
 
 
 

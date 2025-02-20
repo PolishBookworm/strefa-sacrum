@@ -173,3 +173,5 @@ cython_debug/
 
 # Custom
 kivy_venv/
+# MapView cache
+cache/

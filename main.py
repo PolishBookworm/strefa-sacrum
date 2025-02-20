@@ -27,8 +27,7 @@ class StrefaSacrumApp(App):
         self.menu_wi = 0
         self.wysokosc_opcji = "48dp"
         self.szerokosc_opcji = "160dp"
-        # self.szerokosc_opcji = "144dp"
-        self.wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->szerokość pojedyńczej opcji w dp, +48-> szerokość menu_button w dp
+        self.wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->wysokość pojedyńczej opcji w dp, +48-> wysokość menu_button w dp
         self.czcionka = os.path.join("resources","ChakraPetch-Regular.ttf")
         self.kolor_tekstu = [.2, .15686, .07059, 1]
         self.kolor_tla = [.97, .97, .97, 1]

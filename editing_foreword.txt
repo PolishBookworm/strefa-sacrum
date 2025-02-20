@@ -100,3 +100,14 @@
 
 #Dziękuję za uwagę, MZ
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+python3 -m venv kivy_venv // creates venv
+source kivy_venv/bin/activate // activates venv
+python -m pip install "kivy[base]" // installs kivy
+deactivate kivy_venv // nomen omen
+python -m pip install mapview // nomen omen
+
+Z wyrazami szacunku
+OP
