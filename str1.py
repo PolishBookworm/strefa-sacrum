@@ -19,7 +19,7 @@ Builder.load_file('str1.kv')
 #visit main.py, str0.py, str0.kv for editing foreword
 
 
-class ScreenEin(Screen):
+class ScreenEins(Screen):
 
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()

@@ -33,7 +33,7 @@ Builder.load_file('str0.kv')
     # >By dodać/usunąć podstronę X zobacz poradnik w /str0.kv/
 
     # >Dla strony X w //strX.py\class ScreenX// powinny znajdować się wszystkie
-    #zmienne z //main.py\class MyApp\def build\sm.add_widget(ScreenX)//
+    #zmienne z //main.py\class StrefaSacrumApp\def build\sm.add_widget(ScreenX)//
     #z odpowiednią właściwością (Property)
 
     # >Funkcje /def karta/, /def wlacznik_menu/ oraz /def on_size/

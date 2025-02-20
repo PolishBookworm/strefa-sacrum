@@ -6,7 +6,7 @@ from kivy.properties import StringProperty, BooleanProperty, NumericProperty, Li
 from kivy.uix.screenmanager import NoTransition
 
 from str0 import ScreenNull
-from str1 import ScreenEin
+from str1 import ScreenEins
 from str2 import ScreenZwei
 from str3 import ScreenDrei
 from str4 import ScreenVier
@@ -25,17 +25,17 @@ import os
 
     # >Aplikację uruchamiamy z /main.py/
 
-    # >Zmienne w /#blok Z/ w //class MyApp\def __init__// są niezbędne do prawidłowego
+    # >Zmienne w /#blok Z/ w //class StrefaSacrumApp\def __init__// są niezbędne do prawidłowego
     #funkcjonowania wszystkich podstron więc ich nie dotykamy
 
     # >Wygląd podstrony X definiujemy w /strX.kv/
     #a jej funkcje w /strX.py/
 
     # >Wprowadzając zmienną Y wspólną dla większości podstron:
-        #Definiujemy ją w //class MyApp\def __init__// jako self.Y = wartość
+        #Definiujemy ją w //class StrefaSacrumApp\def __init__// jako self.Y = wartość
         #Dla każdej podstrony X używającej zmiennej Y:
             #W //strX.py\class ScreenX// definiujemy pustą zmienną Y z odpowiednią właściwością (Property)
-            #W //main.py\class MyApp\def build\sm.add_widget(ScreenX) dodajemy: Y = self.Y
+            #W //main.py\class StrefaSacrumApp\def build\sm.add_widget(ScreenX) dodajemy: Y = self.Y
         #Gratulacle! Zmienna jest gotowa do użytku w strX.py jako self.Y oraz w strX.kv jako root.Y
 
     # >By dodać/usunąć podstronę X zobacz poradnik w /str0.kv/
@@ -57,13 +57,13 @@ class StrefaSacrumApp(App):
         self.wysokosc_opcji = "48dp"
         self.szerokosc_opcji = "144dp"
         self.wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->szerokość pojedyńczej opcji w dp, +48-> szerokość menu_button w dp
-        self.czcionka = os.path.join("our_resources","wingding.ttf")
+        self.czcionka = os.path.join("our_resources","ChakraPetch-Regular.ttf")
         self.kolor_tekstu = [.2, .15686, .07059, 1]
         self.kolor_tla = [.97, .97, .97, 1]
         self.kolor_akcentu = [.79216, .64314, .31765, 1]
 
         self.s0_name = "Null"
-        self.s1_name = "Ein"
+        self.s1_name = "Eins"
         self.s2_name = "Zwei"
         self.s3_name = "Drei"
         self.s4_name = "Vier"
@@ -96,7 +96,7 @@ class StrefaSacrumApp(App):
             s6_name = self.s6_name,
             s7_name = self.s7_name,))
 
-        sm.add_widget(ScreenEin(
+        sm.add_widget(ScreenEins(
             name='str1',
             menu_wl=self.menu_wl, menu_wi=self.menu_wi,
             wysokosc_opcji=self.wysokosc_opcji,

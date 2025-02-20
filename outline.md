@@ -5,8 +5,9 @@ Zakładki:
 3. Kalendarz liturgiczny diecezji
 4. O diecezji
 5. Sponsorzy i partnerzy
+6. O nas
 
-6. Podstrona każdej parafii -- jako jedna strona, która przyjmuje argument: jaka parafia i wyświetla odpowiednio (nie zakładka)
+7. Podstrona każdej parafii -- jako jedna strona, która przyjmuje argument: jaka parafia i wyświetla odpowiednio (nie zakładka)
 
 O czym warto nie zapomnieć:
 - [ ] przejrzeć licencje: kivy, mapview (MIT), ...
