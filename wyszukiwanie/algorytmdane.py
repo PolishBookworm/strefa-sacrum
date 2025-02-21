@@ -1,7 +1,8 @@
 import csv
 import os
 #id parafii to numer wiersza w którym ta parafia sie znajduje, numerujemy od 0
-#wypisz wszystko o parafii dając id parafii
+
+#wypisz wszystko o parafii, mając id parafii
 def daj_wszystko_po_id(id_parafii, home=False):
     plik = "daneprzyklad.csv"
     if home: # to usuwa problem ze ścieżkami
@@ -52,7 +53,7 @@ def liczba_rekordow(home=False):
     plik = "daneprzyklad.csv"
     if home: # to usuwa problem ze ścieżkami
         plik = os.path.join("wyszukiwanie",plik)
-    with open(plik, 'r') as f:
+    with open(plik, 'r', encoding='utf-8') as f:
         lines = len(f.readlines())
         return lines
 

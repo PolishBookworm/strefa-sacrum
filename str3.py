@@ -25,8 +25,6 @@ from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
 
 Builder.load_file('str3.kv')
 
-# print(daj_wszystko_po_id(0,True))
-
 # see editing_foreword.txt
 
 

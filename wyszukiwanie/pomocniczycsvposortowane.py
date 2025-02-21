@@ -2,7 +2,7 @@ import csv
 #id parafii to numer wiersza w którym ta parafia sie znajduje, numerujemy od 0
 
 
-csv_file = csv.reader(open('../daneprzyklad.csv', "r"), delimiter=';')
+csv_file = csv.reader(open('../daneprzyklad.csv', "r", encoding='utf-8'), delimiter=';')
 lista_mszy=[]
 idparafii = -1
 for row in csv_file:
@@ -20,9 +20,9 @@ for element in nowa_lista_mszy:
     tekst.append(str(element[0])+','+element[1]+','+str(element[2]))
 print(tekst)
 
-with open('../posortowane.csv', 'w', newline='') as csvfile:
+with open('../posortowane.csv', 'w', newline='', encoding='utf-8') as csvfile:
         spamwriter = csv.writer(csvfile,delimiter=';')
         spamwriter.writerow(tekst)
-csv_file = csv.reader(open('../posortowane.csv', "r"), delimiter=';')
+csv_file = csv.reader(open('../posortowane.csv', "r", encoding='utf-8'), delimiter=';')
 for line in csv_file:
         print (line)

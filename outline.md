@@ -17,7 +17,7 @@
 - [ ] disclaimer (sprawdzić aktualność, bo chodzi o syntezę)
 - [ ] dodać podstronę dla danych parafii
 - [ ] ogarnąć polskie znaki w danych - solve: do open dać: `encoding='utf-8'`
-- [ ] ścieżki plików w wyszukiwanie/
+- [X] ścieżki plików w wyszukiwanie/
 
 # Maybe
 - [ ] set map to user location
