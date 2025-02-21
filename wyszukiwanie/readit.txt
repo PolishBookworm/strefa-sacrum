@@ -18,3 +18,8 @@ później jest jakby dopisek tylko on jest ten sam dla wszystkich mszy ale tego 
 a i zrobimy chb osobne kolumny i takie wyszukiwania dla mszy w niedziele/wtygodniu wlato/wzime bo to raczej podobne
 i będzie prościej
 
+
+
+Jak się polskie znaki psują to do open() dodać encoding='utf-8' np. open('daneprzyklad.csv', "r", encoding='utf-8')
+Nie do końca testowałam czy działa, ale pewnie tak
+OP

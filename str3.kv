@@ -36,12 +36,12 @@
                 MapView:
                     id: mapview
                     on_parent: self.center_on(50.0412, 21.9991)
-                    zoom: 13
+                    zoom: 10
 
-                    MapMarkerPopup:
-                        lat: 50.039593550126796
-                        lon: 21.999932593020528
-                        on_release: root.marker_popup(self.lat, self.lon)
+                    # MapMarkerPopup:
+                    #     lat: 50.039593550126796
+                    #     lon: 21.999932593020528
+                    #     on_release: root.marker_popup(self.lat, self.lon)
 
 
 
@@ -167,6 +167,8 @@
     size_hint: (0.25, 0.5)
     background_color: root.kolor_tla
 
+    nazwa_parafii: nazwa_parafii
+
     BoxLayout: # main content layout
         orientation: "vertical"
 
@@ -192,8 +194,21 @@
                 background_color: root.kolor_akcentu
 
         Label:
-            text: "<nazwa parafii>"
+            id: nazwa_parafii
+            # text: "<nazwa parafii>"
             font_name: root.czcionka
             color: root.kolor_tekstu
+            halign: 'center'  # Align text to the left
+            valign: 'middle'  # Align text to the top
+            size_hint: .7, .95
+            text_size: self.size
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_size: self.width / 7
+
 
         # add a button to get to the parish subsection
+
+
+<ParishMarker>:
+    on_release: root.marker_popup()
+    # source: 'image.png'

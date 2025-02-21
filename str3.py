@@ -21,8 +21,11 @@ from kivy.graphics import Rectangle
 
 from kivy_garden.mapview import MapView, MapMarkerPopup
 
+from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
+
 Builder.load_file('str3.kv')
 
+# print(daj_wszystko_po_id(0,True))
 
 # see editing_foreword.txt
 
@@ -79,12 +82,52 @@ class ScreenDrei(Screen):
         lajout.height = wys
         pudlo.pos = (0, y_position)
 
-    def marker_popup(self, lat, lon):
-        popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
-        popup.open()
+        self.add_markers()
+
+    # def marker_popup(self, lat, lon):
+    #     popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+    #     popup.open()
+
+    def add_markers(self):
+
+        coords = []
+
+        n = liczba_rekordow(home=True)
+
+        for i in range(n):
+            tmp = daj_wszystko_po_id(i, home=True)
+            tmp = tmp[2]
+            tmp = tmp.split(",")
+            tmp = list(map(float,tmp))
+            coords.append(tmp)
+
+        # for lat, lon in coords:
+        #     marker = ParishMarker(lat=lat,lon=lon, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+        #     self.mapview.add_marker(marker)
+
+        for i in range(n):
+            marker = ParishMarker(lat=coords[i][0],lon=coords[i][1], id_parafii=i, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+            self.mapview.add_marker(marker)
+
 
 class ParishPopup(Popup):
     czcionka = StringProperty()
     kolor_tekstu = ListProperty()
     kolor_tla = ListProperty()
     kolor_akcentu = ListProperty()
+
+    nazwa_parafii = ObjectProperty(None)
+
+class ParishMarker(MapMarkerPopup):
+    czcionka = StringProperty()
+    kolor_tekstu = ListProperty()
+    kolor_tla = ListProperty()
+    kolor_akcentu = ListProperty()
+
+    id_parafii = NumericProperty()
+
+    def marker_popup(self):
+        popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+        tmp = daj_wszystko_po_id(self.id_parafii, home=True)[0]
+        popup.nazwa_parafii.text = str(tmp)
+        popup.open()
