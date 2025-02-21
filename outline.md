@@ -18,6 +18,7 @@
 - [ ] dodać podstronę dla danych parafii
 - [X] ogarnąć polskie znaki w danych - solve: do open dać: `encoding='utf-8'`
 - [X] ścieżki plików w wyszukiwanie/
+- [ ] W tych danych Msze powinny być osobno na niedziele, osobno na dni powszednie etc.
 
 # Będzie lepiej
 - [ ] set map to user location

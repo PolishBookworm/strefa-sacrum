@@ -62,4 +62,4 @@ def liczba_rekordow(home=False):
 #znajdz x na dana godzine, dla różańców, majówek i krótkich nabożeństw będzie całkowicie analogiczny algorytm
 #dla adoracji i spowiedzi będzie się różnił tylko tym że sortujemy po godzinach zakończenia
 
-#pokarz wspolnoty - nie robie bo to to samo co daj_wszystko_po_id[kolumnawspolnoty]
+#pokaz wspolnoty - nie robie bo to to samo co daj_wszystko_po_id[kolumnawspolnoty]
