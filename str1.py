@@ -15,6 +15,8 @@ from kivy.core.window import Window
 
 Builder.load_file('str1.kv')
 
+import config
+
 
 # see editing_foreword.txt
 
@@ -24,23 +26,23 @@ class ScreenEins(Screen):
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
 
-    wysokosc_opcji = StringProperty()
-    szerokosc_opcji = StringProperty()
-    wysokosc_menu = NumericProperty()
+    # wysokosc_opcji = StringProperty()
+    # szerokosc_opcji = StringProperty()
+    # wysokosc_menu = NumericProperty()
 
-    czcionka = StringProperty()
-    kolor_tekstu = ListProperty()
-    kolor_tla = ListProperty()
-    kolor_akcentu = ListProperty()
+    # czcionka = StringProperty()
+    # kolor_tekstu = ListProperty()
+    # kolor_tla = ListProperty()
+    # kolor_akcentu = ListProperty()
 
-    s0_name = StringProperty()
-    s1_name = StringProperty()
-    s2_name = StringProperty()
-    s3_name = StringProperty()
-    s4_name = StringProperty()
-    s5_name = StringProperty()
-    s6_name = StringProperty()
-    s7_name = StringProperty()
+    # s0_name = StringProperty()
+    # s1_name = StringProperty()
+    # s2_name = StringProperty()
+    # s3_name = StringProperty()
+    # s4_name = StringProperty()
+    # s5_name = StringProperty()
+    # s6_name = StringProperty()
+    # s7_name = StringProperty()
 
 
     def karta(self, k):
@@ -62,7 +64,7 @@ class ScreenEins(Screen):
         pudlo = self.ids.pudlo
 
         wys = Window.height - dp(48)
-        y_position = self.height - dp(self.wysokosc_menu)
+        y_position = self.height - dp(config.wysokosc_menu)
 
         opcie.height = wys
         lajout.height = wys

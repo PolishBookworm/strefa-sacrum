@@ -23,6 +23,10 @@ from kivy_garden.mapview import MapView, MapMarkerPopup
 
 from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
 
+from str_par import ScreenUnendlich
+
+import config
+
 Builder.load_file('str3.kv')
 
 # see editing_foreword.txt
@@ -33,23 +37,23 @@ class ScreenDrei(Screen):
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
 
-    wysokosc_opcji = StringProperty()
-    szerokosc_opcji = StringProperty()
-    wysokosc_menu = NumericProperty()
+    # wysokosc_opcji = StringProperty()
+    # szerokosc_opcji = StringProperty()
+    # wysokosc_menu = NumericProperty()
 
-    czcionka = StringProperty()
-    kolor_tekstu = ListProperty()
-    kolor_tla = ListProperty()
-    kolor_akcentu = ListProperty()
+    # czcionka = StringProperty()
+    # kolor_tekstu = ListProperty()
+    # kolor_tla = ListProperty()
+    # kolor_akcentu = ListProperty()
 
-    s0_name = StringProperty()
-    s1_name = StringProperty()
-    s2_name = StringProperty()
-    s3_name = StringProperty()
-    s4_name = StringProperty()
-    s5_name = StringProperty()
-    s6_name = StringProperty()
-    s7_name = StringProperty()
+    # s0_name = StringProperty()
+    # s1_name = StringProperty()
+    # s2_name = StringProperty()
+    # s3_name = StringProperty()
+    # s4_name = StringProperty()
+    # s5_name = StringProperty()
+    # s6_name = StringProperty()
+    # s7_name = StringProperty()
 
     mapview = ObjectProperty(None)
 
@@ -74,7 +78,7 @@ class ScreenDrei(Screen):
         pudlo = self.ids.pudlo
 
         wys = Window.height - dp(48)
-        y_position = self.height - dp(self.wysokosc_menu)
+        y_position = self.height - dp(config.wysokosc_menu)
 
         opcie.height = wys
         lajout.height = wys
@@ -103,29 +107,44 @@ class ScreenDrei(Screen):
         #     marker = ParishMarker(lat=lat,lon=lon, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
         #     self.mapview.add_marker(marker)
 
+        # for i in range(n):
+        #     marker = ParishMarker(lat=coords[i][0],lon=coords[i][1], id_parafii=i, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+        #     self.mapview.add_marker(marker)
+
         for i in range(n):
-            marker = ParishMarker(lat=coords[i][0],lon=coords[i][1], id_parafii=i, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+            marker = ParishMarker(lat=coords[i][0],lon=coords[i][1], id_parafii=i)
             self.mapview.add_marker(marker)
 
 
+
 class ParishPopup(Popup):
-    czcionka = StringProperty()
-    kolor_tekstu = ListProperty()
-    kolor_tla = ListProperty()
-    kolor_akcentu = ListProperty()
+    # czcionka = StringProperty()
+    # kolor_tekstu = ListProperty()
+    # kolor_tla = ListProperty()
+    # kolor_akcentu = ListProperty()
 
     nazwa_parafii = ObjectProperty(None)
 
+    id_parafii = NumericProperty()
+
+    def go_to_parish(self):
+        app = App.get_running_app()
+        sm = app.root
+        sm.add_widget(ScreenUnendlich(name='par', id_parafii=self.id_parafii))
+        # sm.add_widget(ScreenUnendlich(name='par', id_parafii=self.id_parafii, **kwargs))
+        sm.current = 'par'
+
 class ParishMarker(MapMarkerPopup):
-    czcionka = StringProperty()
-    kolor_tekstu = ListProperty()
-    kolor_tla = ListProperty()
-    kolor_akcentu = ListProperty()
+    # czcionka = StringProperty()
+    # kolor_tekstu = ListProperty()
+    # kolor_tla = ListProperty()
+    # kolor_akcentu = ListProperty()
 
     id_parafii = NumericProperty()
 
     def marker_popup(self):
-        popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+        popup = ParishPopup(id_parafii=self.id_parafii)
+        # popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu, id_parafii=self.id_parafii)
         tmp = daj_wszystko_po_id(self.id_parafii, home=True)[0]
         popup.nazwa_parafii.text = str(tmp)
         popup.open()

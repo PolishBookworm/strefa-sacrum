@@ -1,3 +1,8 @@
+! blok Z przenoszę do config.py, stamtąd można te stałe importować, bo inaczej się życie komplikuje
+zamiast root.cos lub self.cos będzie config.cos
+OP
+
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Editing foreword (more in main.py, str0.py):
 
