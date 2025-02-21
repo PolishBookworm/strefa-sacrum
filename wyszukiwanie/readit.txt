@@ -1,0 +1,20 @@
+dobra to tak jak jest algorytmdane to tam są wszystkie algorytmy potrzebne
+do danych,raczej są opisane jak
+coś ten to piszcie, albo jak jeszcze jakieś funkcje dorobić, dla adoracji spowiedzi i majowek zrobie jeszcze
+przed btw
+
+daneprzyklad to taki plik z tymi testowymi danymi w takim chb formacie jak będą
+
+a posortowane to plik z poszczególnymi mszami jakby posortowanymi według godziny,
+gdzie każda msza jest wpisana jako [godzinamszy,czyjestspecjalna,idparafii]
+
+godzinamszy = nie przestraszcie sie ale jest jako godzina*100+minuty, trch strasznie to wygląda
+i jakby to miało w czymś pomóc to można zmienić na godzina*60 np. jakbyśmy chciały pokazywać ile minut do mszy
+ale na razie po prostu czytelniej widać a porównanie działa tak samo
+
+a jak jest czyjestspecjalna to kolumne
+później jest jakby dopisek tylko on jest ten sam dla wszystkich mszy ale tego nie powinno być dużo
+
+a i zrobimy chb osobne kolumny i takie wyszukiwania dla mszy w niedziele/wtygodniu wlato/wzime bo to raczej podobne
+i będzie prościej
+
