@@ -203,11 +203,25 @@
             size_hint: .7, .95
             text_size: self.size
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-            font_size: self.width / 7
+            font_size: self.width / 7.1
 
 
         Button: # get to the parish subsection
             on_press: root.go_to_parish()
+            text: "Więcej informacji"
+            font_name: config.czcionka
+            color: config.kolor_tekstu
+
+            halign: 'center'  # Align text to the left
+            valign: 'middle'  # Align text to the top
+            size_hint: None, None
+            text_size: self.size
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_size: self.width / 7
+
+            background_normal: ""
+            background_down: ""
+            background_color: config.kolor_akcentu
 
 
 <ParishMarker>:

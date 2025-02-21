@@ -128,6 +128,7 @@ class ParishPopup(Popup):
     id_parafii = NumericProperty()
 
     def go_to_parish(self):
+        self.dismiss()
         app = App.get_running_app()
         sm = app.root
         sm.add_widget(ScreenUnendlich(name='par', id_parafii=self.id_parafii))

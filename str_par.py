@@ -15,7 +15,7 @@ from kivy.core.window import Window
 
 from wyszukiwanie.algorytmdane import daj_wszystko_po_id
 
-Builder.load_file('str7.kv')
+Builder.load_file('str_par.kv')
 
 import config
 
@@ -78,5 +78,5 @@ class ScreenUnendlich(Screen):
         self.set_data()
 
     def set_data(self):
-        data = daj_wszystko_po_id(id_parafii, home=True)
+        data = daj_wszystko_po_id(self.id_parafii, home=True)
         self.nazwa_parafii_label.text = data[0]
