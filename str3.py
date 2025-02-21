@@ -1,5 +1,5 @@
 # mapa diecezji
- 
+
 import kivy
 kivy.require('2.3.1')
 from kivy.app import App
@@ -14,8 +14,12 @@ from kivy.lang import Builder
 from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.uix.popup import Popup
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
+from kivy.graphics import Rectangle
 
-from kivy_garden.mapview import MapView
+from kivy_garden.mapview import MapView, MapMarkerPopup
 
 Builder.load_file('str3.kv')
 
@@ -47,12 +51,8 @@ class ScreenDrei(Screen):
     s7_name = StringProperty()
 
     mapview = ObjectProperty(None)
-    
-    # def __init__(self, *args, **kwargs):
-    #     super.__init__(self, *args, **kwargs)
-    #     mapview = MapView(zoom=5,lat=50.0412, lon=21.9991)
-    #     self.add_widget(mapview)
 
+    # popup = ObjectProperty(None)
 
     def karta(self, k):
         app = App.get_running_app()
@@ -79,4 +79,12 @@ class ScreenDrei(Screen):
         lajout.height = wys
         pudlo.pos = (0, y_position)
 
-        # print(f"Map center: {self.mapview.lat}, {self.mapview.lon}")
+    def marker_popup(self, lat, lon):
+        popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
+        popup.open()
+
+class ParishPopup(Popup):
+    czcionka = StringProperty()
+    kolor_tekstu = ListProperty()
+    kolor_tla = ListProperty()
+    kolor_akcentu = ListProperty()

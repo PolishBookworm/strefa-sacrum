@@ -38,21 +38,10 @@
                     on_parent: self.center_on(50.0412, 21.9991)
                     zoom: 13
 
-                # Label:
-                #     text: 'Ave Caesar morituri te salutant\n' * 314  # Repeat text to make it scrollable
-                #     font_name: root.czcionka
-                #     color: root.kolor_tekstu
-                #     text_size: self.width, None
-                #     size_hint_y: None  # Allow the label to have a specific height
-                #     height: self.texture_size[1]  # Set height based on the label's content
-                #     padding: 10, 10
-
-                #     canvas.before:
-                #         Color:
-                #             rgba: root.kolor_tla
-                #         Rectangle:
-                #             pos: self.pos
-                #             size: self.size
+                    MapMarkerPopup:
+                        lat: 50.039593550126796
+                        lon: 21.999932593020528
+                        on_release: root.marker_popup(self.lat, self.lon)
 
 
 
@@ -168,3 +157,43 @@
             on_state: root.wlacznik_menu(self)
             background_down: join("resources", "menu_button.png")
             background_normal: join("resources", "menu_button.png")
+
+
+<ParishPopup>:
+    title: "" # rm default title
+    title_size: 0
+    separator_height: 0 # rm ugly stripe 
+    background: "" # rm default bg
+    size_hint: (0.25, 0.5)
+    background_color: root.kolor_tla
+
+    BoxLayout: # main content layout
+        orientation: "vertical"
+
+        BoxLayout: # custom title bar
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 40
+
+            Label:
+                text: "Szczegóły"
+                font_name: root.czcionka
+                color: root.kolor_tekstu
+                size_hint_x: 0.8
+
+            Button: # close button
+                text: "X"
+                font_name: root.czcionka
+                color: root.kolor_tekstu
+                size_hint_x: 0.2
+                on_press: root.dismiss()
+                background_normal: ""
+                background_down: ""
+                background_color: root.kolor_akcentu
+
+        Label:
+            text: "<nazwa parafii>"
+            font_name: root.czcionka
+            color: root.kolor_tekstu
+
+        # add a button to get to the parish subsection

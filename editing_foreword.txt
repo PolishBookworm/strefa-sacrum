@@ -108,6 +108,7 @@ source kivy_venv/bin/activate // activates venv
 python -m pip install "kivy[base]" // installs kivy
 deactivate kivy_venv // nomen omen
 python -m pip install mapview // nomen omen
+(lub pip install kivy_garden, potem: garden install mapview)
 
 Z wyrazami szacunku
 OP
