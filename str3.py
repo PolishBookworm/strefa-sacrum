@@ -131,9 +131,11 @@ class ParishPopup(Popup):
         self.dismiss()
         app = App.get_running_app()
         sm = app.root
-        sm.add_widget(ScreenUnendlich(name='par', id_parafii=self.id_parafii))
+        name = f"par{self.id_parafii}"
+        if not sm.has_screen(name):
+            sm.add_widget(ScreenUnendlich(name=name, id_parafii=self.id_parafii))
         # sm.add_widget(ScreenUnendlich(name='par', id_parafii=self.id_parafii, **kwargs))
-        sm.current = 'par'
+        sm.current = name
 
 class ParishMarker(MapMarkerPopup):
     # czcionka = StringProperty()

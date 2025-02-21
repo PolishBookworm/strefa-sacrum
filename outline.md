@@ -8,7 +8,7 @@
 6. Sponsorzy i partnerzy
 7. O nas
 
-8. Podstrona każdej parafii -- jako jedna strona, która przyjmuje argument: jaka parafia i wyświetla odpowiednio (nie zakładka) (trzeba dodać)
+8. Podstrona każdej parafii -- jako jedna strona, która przyjmuje argument: jaka parafia i wyświetla odpowiednio (nie zakładka) - str_par
 
 # O czym warto nie zapomnieć:
 - [ ] przejrzeć licencje: kivy, mapview (MIT), https://www.openstreetmap.org/copyright, ...
@@ -19,8 +19,8 @@
 - [X] ogarnąć polskie znaki w danych - solve: do open dać: `encoding='utf-8'`
 - [X] ścieżki plików w wyszukiwanie/
 
-# Maybe
+# Będzie lepiej
 - [ ] set map to user location
-
-# Weird stuff for later
-- [ ] global constants
+- [ ] map marker img - sth funny
+- [ ] popup z mapy - ładniejszy
+- [ ] ładna czcionka
