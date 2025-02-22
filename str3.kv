@@ -162,9 +162,10 @@
 <ParishPopup>:
     title: "" # rm default title
     title_size: 0
-    separator_height: 0 # rm ugly stripe 
+    separator_height: 0 # rm ugly stripe
     background: "" # rm default bg
-    size_hint: (0.25, 0.5)
+    size_hint: (None, None)
+    size: "240dp", "192dp"
     # size_hint: (0.25, 0.3)
     background_color: config.kolor_tla
 
@@ -240,29 +241,31 @@
     #         # background_color: config.kolor_akcentu
 
 
-    BoxLayout: # main content layout
-        orientation: "vertical"
+    FloatLayout: # main content layout
+        #orientation: "vertical"
 
-        BoxLayout: # custom title bar
-            orientation: "horizontal"
-            size_hint_y: None
-            height: 40
+        #BoxLayout: # custom title bar
+            #orientation: "horizontal"
+            #size_hint_y: None
+            #height: 40
 
-            Label:
-                text: "Szczegóły"
-                font_name: config.czcionka
-                color: config.kolor_tekstu
-                size_hint_x: 0.8
+            #Label:
+            #    text: "Szczegóły"
+            #    font_name: config.czcionka
+            #    color: config.kolor_tekstu
+            #    size_hint_x: 0.8
 
-            Button: # close button
-                text: "X"
-                font_name: config.czcionka
-                color: config.kolor_tekstu
-                size_hint_x: 0.2
-                on_press: root.dismiss()
-                background_normal: ""
-                background_down: ""
-                background_color: config.kolor_akcentu
+        Button: # close button
+            text: "X"
+            font_name: config.czcionka
+            color: config.kolor_tekstu
+            size_hint: None, None
+            size: "36dp", "36dp"
+            pos_hint: {"top": 1.13, "right": 1}
+            on_press: root.dismiss()
+            background_normal: ""
+            background_down: ""
+            background_color: config.kolor_akcentu
 
         Label:
             id: nazwa_parafii
@@ -271,10 +274,10 @@
             color: config.kolor_tekstu
             halign: 'center'  # Align text to the left
             valign: 'middle'  # Align text to the top
-            size_hint: .7, .95
+            size_hint: .95, .5
             text_size: self.size
-            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-            font_size: self.width / 7.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.655}
+            font_size: self.width / 12
 
 
         Button: # get to the parish subsection
@@ -285,10 +288,10 @@
 
             halign: 'center'  # Align text to the left
             valign: 'middle'  # Align text to the top
-            size_hint: None, None
-            text_size: self.size
-            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-            font_size: self.width / 7
+            size_hint: .95, .35
+            #text_size: self.size
+            pos_hint: {'center_x': 0.5, "y": 0.02}
+            #font_size: self.width / 7
 
             background_normal: ""
             background_down: ""
