@@ -7,9 +7,10 @@ wysokosc_opcji = "48dp"
 szerokosc_opcji = "160dp"
 wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->wysokość pojedyńczej opcji w dp, +48-> wysokość menu_button w dp
 czcionka = os.path.join("resources","ChakraPetch-Regular.ttf")
-kolor_tekstu = [.2, .15686, .07059, 1]
-kolor_tla = [.97, .97, .97, 1]
-kolor_akcentu = [.79216, .64314, .31765, 1]
+kolor_tekstu = [.2, .15686, .07059, 1]          #~czarny
+kolor_tla = [.97, .97, .97, 1]                  #~biały
+kolor_akcentu = [.79216, .64314, .31765, 1]     #złoty
+kolor_informacyjny = [.97255, .97255, .62745, 1]   #żółty
 
 s0_name = "Strona główna"
 s1_name = "Znajdź Mszę"

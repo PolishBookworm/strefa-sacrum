@@ -30,6 +30,53 @@
                 size_hint_y: None
                 height: self.minimum_height
 
+
+        # powiadomienie o możliwych błędach
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 1, None
+
+                    height: self.minimum_height if root.show_pow else 0
+
+                    disabled: not root.show_pow
+                    opacity: 1 if root.show_pow else 0
+
+                    canvas.before:
+                        Color:
+                            rgba: config.kolor_informacyjny
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                    Label:
+                        id: pow
+                        text: "Godziny Mszy mogą być nieaktualne. Zalecamy sprawdzenie ich na stronie parafii."
+                        font_name: config.czcionka
+                        color: config.kolor_tekstu
+
+                        halign: 'left'  # Align text to the left
+                        valign: 'top'  # Align text to the top
+
+                        text_size: self.width, None
+                        padding: 10, 10
+
+                        size_hint_y: None
+                        height: self.texture_size[1]
+
+                    Button:
+
+                        size_hint: None, None
+                        size: "48dp", pow.height
+                        text: "X"
+                        font_name: config.czcionka
+                        color: config.kolor_tekstu
+                        background_normal: ""
+                        background_down: ""
+                        background_color: config.kolor_informacyjny
+
+                        on_press: root.hide_powiadomienie()
+
+        # kontent
                 Label:
                     id: nazwa_parafii_label
                     # text: 'Ave Caesar morituri te salutant\n' * 314  # Repeat text to make it scrollable

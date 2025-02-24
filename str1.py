@@ -25,6 +25,7 @@ class ScreenEins(Screen):
 
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
+    show_pow = BooleanProperty(True)
 
     # wysokosc_opcji = StringProperty()
     # szerokosc_opcji = StringProperty()
@@ -44,6 +45,8 @@ class ScreenEins(Screen):
     # s6_name = StringProperty()
     # s7_name = StringProperty()
 
+    def hide_powiadomienie(self):
+        self.show_pow = False
 
     def karta(self, k):
         app = App.get_running_app()
