@@ -13,7 +13,6 @@ from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
 
-
 from kivy.uix.recycleview import RecycleView
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
@@ -32,25 +31,6 @@ class ScreenZwei(Screen):
 
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
-
-    # wysokosc_opcji = StringProperty()
-    # szerokosc_opcji = StringProperty()
-    # wysokosc_menu = NumericProperty()
-
-    # czcionka = StringProperty()
-    # kolor_tekstu = ListProperty()
-    # kolor_tla = ListProperty()
-    # kolor_akcentu = ListProperty()
-
-    # s0_name = StringProperty()
-    # s1_name = StringProperty()
-    # s2_name = StringProperty()
-    # s3_name = StringProperty()
-    # s4_name = StringProperty()
-    # s5_name = StringProperty()
-    # s6_name = StringProperty()
-    # s7_name = StringProperty()
-
 
     def karta(self, k):
         app = App.get_running_app()
@@ -81,10 +61,6 @@ class ScreenZwei(Screen):
 class RecycleLabel(RecycleDataViewBehavior, Label):
     """ Custom Label for RecycleView items. """
     text = StringProperty("")  # Ensures text appears in labels
-
-    # def __init__(self, **kwargs):
-    #     super().__init__(**kwargs)
-    #     print("hi")
 
 
 class SearchableRecycleView(RecycleView):
