@@ -13,6 +13,14 @@ from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
 
+
+from kivy.uix.recycleview import RecycleView
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
+from kivy.uix.recycleboxlayout import RecycleBoxLayout
+from kivy.uix.recycleview.views import RecycleDataViewBehavior
+from kivy.clock import Clock
+
 Builder.load_file('str2.kv')
 
 import config
@@ -68,3 +76,84 @@ class ScreenZwei(Screen):
         opcie.height = wys
         lajout.height = wys
         pudlo.pos = (0, y_position)
+
+
+class RecycleLabel(RecycleDataViewBehavior, Label):
+    """ Custom Label for RecycleView items. """
+    text = StringProperty("")  # Ensures text appears in labels
+
+    # def __init__(self, **kwargs):
+    #     super().__init__(**kwargs)
+    #     print("hi")
+
+
+class SearchableRecycleView(RecycleView):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        Clock.schedule_once(self.set_viewclass, 0)
+
+        # Make sure layout updates properly
+        self.layout_manager = RecycleBoxLayout(orientation="vertical", spacing=5, size_hint_y=None)
+        self.layout_manager.bind(minimum_height=self.layout_manager.setter("height"))
+        self.add_widget(self.layout_manager)
+
+        # Ensure items have a proper height
+        self.layout_manager.default_size = None, 40  # 40px height per item
+        self.layout_manager.default_size_hint = 1, None  # Full width, fixed height
+
+        # Initialize list of items
+        self.all_items = [
+            'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'
+        ]
+
+        # print(f"DEBUG: Initial items → {self.all_items}")  # Debugging print
+
+        self.update_data(self.all_items)  # Load all items initially
+
+    def update_data(self, items):
+        """Update the RecycleView data dynamically."""
+        if items is None:
+            items = []  # Ensure items is always a list
+
+        self.data = [{'text': item} for item in items]  # Correct data format
+
+        # print(f"DEBUG: Updating data → {self.data}")  # Debugging print
+
+        self.refresh_from_data()  # Ensures UI updates dynamically
+
+    def filter_items(self, query):
+        """Filter the list based on user input."""
+        if not self.all_items:
+            # print("ERROR: self.all_items is empty!")  # Debugging print
+            return
+
+        query = query.strip().lower()  # Normalize input
+
+        filtered = [item for item in self.all_items if query in item.lower()]
+
+        # print(f"DEBUG: Filtering for '{query}' → Found: {filtered}")  # Debugging print
+
+        self.update_data(filtered)  # Update UI with filtered results
+
+    def set_viewclass(self, dt):
+        self.viewclass = "RecycleLabel"
+        # print(f"DEBUG (delayed): viewclass = {self.viewclass}")  # Should print "RecycleLabel"
+
+
+class SearchBox(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(orientation='vertical', **kwargs)
+
+        # Search bar
+        self.search_input = TextInput(hint_text='Search...', size_hint_y=None, height=40)
+        self.search_input.bind(text=self.on_text)
+        self.add_widget(self.search_input)
+
+        # Search results list
+        self.result_list = SearchableRecycleView()
+        self.add_widget(self.result_list)
+
+    def on_text(self, instance, value):
+        """Update the search results when text changes."""
+        self.result_list.filter_items(value)

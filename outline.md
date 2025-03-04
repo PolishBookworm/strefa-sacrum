@@ -13,8 +13,7 @@
 # O czym warto nie zapomnieć:
 - [ ] przejrzeć licencje: kivy, mapview (MIT), https://www.openstreetmap.org/copyright, ...
 - [ ] buildozer.spec jak będziemy paczkować (jakie moduły w pythonie; potrzebne permissions np. gps, internet; package.domain; ...)
-- [ ] https://kivy.org/doc/stable/api-kivy.app.html#pause-mode
-- [ ] disclaimer (sprawdzić aktualność, bo chodzi o syntezę)
+- [X] disclaimer (sprawdzić aktualność, bo chodzi o syntezę)
 - [ ] dodać podstronę dla danych parafii
 - [X] ogarnąć polskie znaki w danych - solve: do open dać: `encoding='utf-8'`
 - [X] ścieżki plików w wyszukiwanie/

@@ -25,25 +25,11 @@
 #tutaj_koktent
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
+                # size_hint_y: None
+                size_hint: (1,1)
+                # height: self.minimum_height
 
-                Label:
-                    text: 'Tertiam qui ipsorum lingua Celtae nostra Galli appellantur\n' * 314  # Repeat text to make it scrollable
-                    font_name: config.czcionka
-                    color: config.kolor_tekstu
-                    text_size: self.width, None
-                    size_hint_y: None  # Allow the label to have a specific height
-                    height: self.texture_size[1]  # Set height based on the label's content
-                    padding: 10, 10
-
-                    canvas.before:
-                        Color:
-                            rgba: config.kolor_tla
-                        Rectangle:
-                            pos: self.pos
-                            size: self.size
-
+                SearchBox:
 
 
 #tło_pod_opcjami
@@ -158,3 +144,14 @@
             on_state: root.wlacznik_menu(self)
             background_down: join("resources", "menu_button.png")
             background_normal: join("resources", "menu_button.png")
+
+
+<RecycleLabel>:
+    font_name: config.czcionka
+    color: config.kolor_tekstu
+    canvas.before:
+        Color:
+            rgba: config.kolor_tla
+        Rectangle:
+            pos: self.pos
+            size: self.size
