@@ -1,28 +1,48 @@
 import csv
 #id parafii to numer wiersza w którym ta parafia sie znajduje, numerujemy od 0
+#wypisz wszystko o parafii dając id parafii
+def daj_wszystko_po_id(id_parafii):
+    csv_plikdwpid = csv.reader(open('../zwztdaneboze2.csv', "r"), delimiter=';')
+    c_dwpid = -1 #counter_daj_wszystko_po_id
+    for row in csv_plikdwpid:
+        c_dwpid +=1
+        if c_dwpid == id_parafii:
+            return(row)
+print(daj_wszystko_po_id(3))
+#znajdz msze na dana godzine
+def daj_liste_mszy(godzina,numerwiersza): # numer wiersza w posortowane w którym szukamy
+    csv_file = csv.reader(open('../posortowane.csv', "r"), delimiter=';')
+    for i in range(numerwiersza):
+        lista_mszy = next(csv_file)
+    return lista_mszy[binarprzejscie1(lista_mszy, godzina):]
+def binarprzejscie1(arr, x):
+    if x <= int(arr[0].split(',')[0]):
+        return 0
+    elif x > int(arr[-1].split(',')[0]):
+        return len(arr)
+    else:
+        return binary_search(arr, 0, len(arr) - 1, x) + 1
+def binary_search(arr, low, high, x):
+    if high >= low or int(arr[high].split(',')[0]) == int(arr[low].split(',')[0]):
+        mid = (high + low) // 2
+        if int(arr[mid].split(',')[0]) < x and int(arr[mid + 1].split(',')[0]) >= x:
+            return mid
+        elif int(arr[mid].split(',')[0]) >= x:
+            return binary_search(arr, low, mid - 1, x)
+        else:
+            return binary_search(arr, mid + 1, high, x)
+    else:
+        if x >= int(arr[-1].split(',')[0]):
+            return len(arr)
+        else:
+            return -1
+#print(daj_liste_mszy(1700,1)) #ta linijka co wyjdzie to wszystkie msze gdzie dla mszy wiemy tak
+#print(daj_liste_mszy(1300,2))
+#czy jest ona
+#znajdz x na dana godzine, dla różańców, majówek i krótkich nabożeństw będzie całkowicie analogiczny algorytm
+#dla adoracji i spowiedzi będzie się różnił tylko tym że sortujemy po godzinach zakończenia
 
 
-csv_file = csv.reader(open('../daneprzyklad.csv', "r", encoding='utf-8'), delimiter=';')
-lista_mszy=[]
-idparafii = -1
-for row in csv_file:
-    idparafii +=1
-    for godzina in row[3].split(','):
-        dodatek = ''
-        if godzina[-1]=='*':
-            dodatek = '*'
-            godzina = godzina[:-1]
-        lista_mszy.append([int(godzina.split(':')[0])*100+int(godzina.split(':')[1]),dodatek,idparafii] )
-#print(lista_mszy)
-nowa_lista_mszy=sorted(lista_mszy, key=lambda x: x[0], reverse=False)
-tekst=[]
-for element in nowa_lista_mszy:
-    tekst.append(str(element[0])+','+element[1]+','+str(element[2]))
-print(tekst)
 
-with open('../posortowane.csv', 'w', newline='', encoding='utf-8') as csvfile:
-        spamwriter = csv.writer(csvfile,delimiter=';')
-        spamwriter.writerow(tekst)
-csv_file = csv.reader(open('../posortowane.csv', "r", encoding='utf-8'), delimiter=';')
-for line in csv_file:
-        print (line)
+
+#pokarz wspolnoty - nie robie bo to to samo co daj_wszystko_po_id[kolumnawspolnoty]
