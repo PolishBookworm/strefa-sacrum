@@ -28,24 +28,6 @@ class ScreenUnendlich(Screen):
     menu_wi = NumericProperty()
     show_pow = BooleanProperty(True)
 
-    # wysokosc_opcji = StringProperty()
-    # szerokosc_opcji = StringProperty()
-    # wysokosc_menu = NumericProperty()
-
-    # czcionka = StringProperty()
-    # kolor_tekstu = ListProperty()
-    # kolor_tla = ListProperty()
-    # kolor_akcentu = ListProperty()
-
-    # s0_name = StringProperty()
-    # s1_name = StringProperty()
-    # s2_name = StringProperty()
-    # s3_name = StringProperty()
-    # s4_name = StringProperty()
-    # s5_name = StringProperty()
-    # s6_name = StringProperty()
-    # s7_name = StringProperty()
-
     id_parafii = NumericProperty()
 
     nazwa_parafii_label = ObjectProperty(None)
