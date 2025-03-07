@@ -37,27 +37,7 @@ class ScreenDrei(Screen):
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
 
-    # wysokosc_opcji = StringProperty()
-    # szerokosc_opcji = StringProperty()
-    # wysokosc_menu = NumericProperty()
-
-    # czcionka = StringProperty()
-    # kolor_tekstu = ListProperty()
-    # kolor_tla = ListProperty()
-    # kolor_akcentu = ListProperty()
-
-    # s0_name = StringProperty()
-    # s1_name = StringProperty()
-    # s2_name = StringProperty()
-    # s3_name = StringProperty()
-    # s4_name = StringProperty()
-    # s5_name = StringProperty()
-    # s6_name = StringProperty()
-    # s7_name = StringProperty()
-
     mapview = ObjectProperty(None)
-
-    # popup = ObjectProperty(None)
 
     def karta(self, k):
         app = App.get_running_app()
@@ -86,10 +66,6 @@ class ScreenDrei(Screen):
 
         self.add_markers()
 
-    # def marker_popup(self, lat, lon):
-    #     popup = ParishPopup(czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
-    #     popup.open()
-
     def add_markers(self):
 
         coords = []
@@ -103,14 +79,6 @@ class ScreenDrei(Screen):
             tmp = list(map(float,tmp))
             coords.append(tmp)
 
-        # for lat, lon in coords:
-        #     marker = ParishMarker(lat=lat,lon=lon, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
-        #     self.mapview.add_marker(marker)
-
-        # for i in range(n):
-        #     marker = ParishMarker(lat=coords[i][0],lon=coords[i][1], id_parafii=i, czcionka=self.czcionka, kolor_tekstu=self.kolor_tekstu, kolor_tla=self.kolor_tla, kolor_akcentu=self.kolor_akcentu)
-        #     self.mapview.add_marker(marker)
-
         for i in range(n):
             marker = ParishMarker(lat=coords[i][0],lon=coords[i][1], id_parafii=i)
             self.mapview.add_marker(marker)
@@ -118,11 +86,7 @@ class ScreenDrei(Screen):
 
 
 class ParishPopup(Popup):
-    # czcionka = StringProperty()
-    # kolor_tekstu = ListProperty()
-    # kolor_tla = ListProperty()
-    # kolor_akcentu = ListProperty()
-
+ 
     nazwa_parafii = ObjectProperty(None)
 
     id_parafii = NumericProperty()
@@ -134,14 +98,9 @@ class ParishPopup(Popup):
         name = f"par{self.id_parafii}"
         if not sm.has_screen(name):
             sm.add_widget(ScreenUnendlich(name=name, id_parafii=self.id_parafii))
-        # sm.add_widget(ScreenUnendlich(name='par', id_parafii=self.id_parafii, **kwargs))
         sm.current = name
 
 class ParishMarker(MapMarkerPopup):
-    # czcionka = StringProperty()
-    # kolor_tekstu = ListProperty()
-    # kolor_tla = ListProperty()
-    # kolor_akcentu = ListProperty()
 
     id_parafii = NumericProperty()
 

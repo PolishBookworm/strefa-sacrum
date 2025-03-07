@@ -149,9 +149,9 @@
 <RecycleLabel>:
     font_name: config.czcionka
     color: config.kolor_tekstu
-    canvas.before:
-        Color:
-            rgba: config.kolor_tla
-        Rectangle:
-            pos: self.pos
-            size: self.size
+
+    on_press: root.go_to_parish()
+
+    background_normal: ""
+    background_down: ""
+    background_color: 0, 0, 0, .1

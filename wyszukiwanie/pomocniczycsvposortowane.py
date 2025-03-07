@@ -1,11 +1,11 @@
 import csv
 #id parafii to numer wiersza w którym ta parafia sie znajduje, numerujemy od 0
 
-with open('posortowane.csv', 'w', newline='') as csvfile:
+with open('posortowane.csv', 'w', newline='', encoding='utf-8') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=';')
     listakolumnzgodzinamimszy = [3,5,9]# z palca
     for kolumna in listakolumnzgodzinamimszy:
-        csv_file = csv.reader(open('zwztdaneboze2.csv', "r"), delimiter=';')
+        csv_file = csv.reader(open('zwztdaneboze2.csv', "r", encoding='utf-8'), delimiter=';')
         lista_mszy = []
         idparafii = -1
         for row in csv_file:
@@ -26,11 +26,11 @@ with open('posortowane.csv', 'w', newline='') as csvfile:
 
 
         spamwriter.writerow(tekst)
-with open('posortowane.csv', 'a', newline='') as csvfile:
+with open('posortowane.csv', 'a', newline='', encoding='utf-8') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=';')
     listakolumnzgodzinamimszy = [7]# z palca kolumny z typem adoracji
     for kolumna in listakolumnzgodzinamimszy:
-        csv_file = csv.reader(open('zwztdaneboze2.csv', "r"), delimiter=';')
+        csv_file = csv.reader(open('zwztdaneboze2.csv', "r", encoding='utf-8'), delimiter=';')
         lista_mszy = []
         idparafii = -1
         for row in csv_file:
@@ -53,7 +53,7 @@ with open('posortowane.csv', 'a', newline='') as csvfile:
 
 
 
-csv_file = csv.reader(open('posortowane.csv', "r"), delimiter=';')
+csv_file = csv.reader(open('posortowane.csv', "r", encoding='utf-8'), delimiter=';')
 for line in csv_file:
     print (line)
 

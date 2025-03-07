@@ -1,3 +1,5 @@
+# wyszukiwanie parafii
+
 import kivy
 kivy.require('2.3.1')
 from kivy.app import App
@@ -12,6 +14,7 @@ from kivy.lang import Builder
 from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.uix.button import Button
 
 from kivy.uix.recycleview import RecycleView
 from kivy.uix.boxlayout import BoxLayout
@@ -19,6 +22,10 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.recycleboxlayout import RecycleBoxLayout
 from kivy.uix.recycleview.views import RecycleDataViewBehavior
 from kivy.clock import Clock
+
+from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
+
+from str_par import ScreenUnendlich
 
 Builder.load_file('str2.kv')
 
@@ -58,9 +65,20 @@ class ScreenZwei(Screen):
         pudlo.pos = (0, y_position)
 
 
-class RecycleLabel(RecycleDataViewBehavior, Label):
+# class RecycleLabel(RecycleDataViewBehavior, Label):
+class RecycleLabel(RecycleDataViewBehavior, Button):
     """ Custom Label for RecycleView items. """
     text = StringProperty("")  # Ensures text appears in labels
+    id_parafii = NumericProperty()
+
+    def go_to_parish(self):
+        # self.dismiss()
+        app = App.get_running_app()
+        sm = app.root
+        name = f"par{self.id_parafii}"
+        if not sm.has_screen(name):
+            sm.add_widget(ScreenUnendlich(name=name, id_parafii=self.id_parafii))
+        sm.current = name
 
 
 class SearchableRecycleView(RecycleView):
@@ -79,11 +97,24 @@ class SearchableRecycleView(RecycleView):
         self.layout_manager.default_size_hint = 1, None  # Full width, fixed height
 
         # Initialize list of items
-        self.all_items = [
-            'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'
-        ]
+        # self.all_items = [
+        #     'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'
+        # ]
 
-        # print(f"DEBUG: Initial items → {self.all_items}")  # Debugging print
+        n = liczba_rekordow(home=True)
+
+        self.all_items = []
+        for i in range(n):
+            tmp = daj_wszystko_po_id(i, home=True)
+            self.all_items.append((tmp[0],i))
+
+        # tmp = [
+        #     'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'
+        # ]
+
+        # self.all_items = []
+        # for i in range(len(tmp)):
+        #     self.all_items.append((tmp[i],i))
 
         self.update_data(self.all_items)  # Load all items initially
 
@@ -92,29 +123,23 @@ class SearchableRecycleView(RecycleView):
         if items is None:
             items = []  # Ensure items is always a list
 
-        self.data = [{'text': item} for item in items]  # Correct data format
-
-        # print(f"DEBUG: Updating data → {self.data}")  # Debugging print
+        self.data = [{'text': item[0], "id_parafii": item[1]} for item in items]  # Correct data format
 
         self.refresh_from_data()  # Ensures UI updates dynamically
 
     def filter_items(self, query):
         """Filter the list based on user input."""
         if not self.all_items:
-            # print("ERROR: self.all_items is empty!")  # Debugging print
             return
 
         query = query.strip().lower()  # Normalize input
 
-        filtered = [item for item in self.all_items if query in item.lower()]
-
-        # print(f"DEBUG: Filtering for '{query}' → Found: {filtered}")  # Debugging print
+        filtered = [item for item in self.all_items if query in item[0].lower()]
 
         self.update_data(filtered)  # Update UI with filtered results
 
     def set_viewclass(self, dt):
         self.viewclass = "RecycleLabel"
-        # print(f"DEBUG (delayed): viewclass = {self.viewclass}")  # Should print "RecycleLabel"
 
 
 class SearchBox(BoxLayout):
