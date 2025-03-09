@@ -33,16 +33,6 @@ import config
 
 # see editing_foreword.txt
 
-def dynamiczne_wysokosci(): #BARDZO PRZYDATNA FUNKCJA
-    print(Window.size)
-
-    current_width, current_height = Window.size
-
-    current_width = 0.8 * current_width
-    current_height = 0.8 * current_height
-
-    Window.size = (current_width, current_height)
-
 
 class ScreenZwei(Screen):
 
@@ -99,6 +89,7 @@ class RecycleLabel(RecycleDataViewBehavior, Button):
             self.background_color = 0, 0, 0, .05
 
 
+
 class SearchableRecycleView(RecycleView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -110,9 +101,12 @@ class SearchableRecycleView(RecycleView):
         self.layout_manager.bind(minimum_height=self.layout_manager.setter("height"))
         self.add_widget(self.layout_manager)
 
+
+        """Jak coś ma 3 linijki to zmienić 54dp na 66dp. Jak wygląda brzydko to napisać. MZ"""
         # Ensure items have a proper height
-        #self.layout_manager.default_size = None, 40  # 40px height per item
+        self.layout_manager.default_size = None, "54dp"  # 40px height per item
         self.layout_manager.default_size_hint = 1, None  # Full width, fixed height
+
 
         # Initialize list of items
         # self.all_items = [
@@ -145,6 +139,7 @@ class SearchableRecycleView(RecycleView):
         self.data = [{'text': item[0], 'id_parafii': item[1], 'index': idx} for idx, item in enumerate(items)]  # Correct data format
 
         self.refresh_from_data()  # Ensures UI updates dynamically
+        self.refresh_from_layout()
 
 
     def filter_items(self, query):
@@ -165,18 +160,6 @@ class SearchableRecycleView(RecycleView):
 
 
 class SearchBox(BoxLayout):
-    #def __init__(self, **kwargs):
-        #super().__init__(orientation='vertical', **kwargs)
-
-        # Search bar
-        #self.SearchInput = TextInput()
-        #self.SearchInput.bind(text=self.on_text)
-        #self.add_widget(self.search_input)
-
-        # Search results list
-        #self.result_list = SearchableRecycleView()
-        #self.add_widget(self.result_list)
-
 
     def on_text(self, instance, value):
         """Update the search results when text changes."""

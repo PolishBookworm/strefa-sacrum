@@ -168,7 +168,6 @@
     text_size: self.width, None
 
     size_hint_y: None
-    height: self.texture_size[1]
 
 
     padding: 10, 20
@@ -181,6 +180,8 @@
             size: self.size
 
     on_index: root.on_row_index(self, self.index)
+
+
 
 <SearchBox>:
     orientation:'vertical'
