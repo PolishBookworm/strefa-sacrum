@@ -118,7 +118,7 @@ class SearchableRecycleView(RecycleView):
         self.all_items = []
         for i in range(n):
             tmp = daj_wszystko_po_id(i, home=True)
-            self.all_items.append((tmp[0],i))
+            self.all_items.append((f"{tmp[0]} - {tmp[1]}",i))
 
         # tmp = [
         #     'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'

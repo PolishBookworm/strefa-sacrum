@@ -31,6 +31,7 @@ class ScreenUnendlich(Screen):
     id_parafii = NumericProperty()
 
     nazwa_parafii_label = ObjectProperty(None)
+    dane_label = ObjectProperty(None)
 
     def hide_powiadomienie(self):
         self.show_pow = False
@@ -64,4 +65,27 @@ class ScreenUnendlich(Screen):
 
     def set_data(self):
         data = daj_wszystko_po_id(self.id_parafii, home=True)
-        self.nazwa_parafii_label.text = data[0]
+        self.nazwa_parafii_label.text = f"{data[0]} - {data[1]}"
+        
+        # tmp = ""
+        # for datum in data[2:]:
+        #     tmp += datum + '\n'
+        tmp = f"""
+[b]Msze Święte w niedziele i święta nakazane:[/b]
+{data[3]}
+[b]Msze Święte w święta nienakazane (zniesione):[/b]
+???
+[b]Msze Święte w dni powszednie:[/b]
+{data[5]}
+[b]Godziny adoracji Naświętszego Sakramentu:[/b]
+{data[7]}
+[b]Godziny spowiedzi świętej:[/b]
+{data[9]}
+[b]Godziny majówek: (inne nabożeństwa???)[/b]
+{data[11]}
+[b]Grupy duszpasterskie w parafii:[/b]
+{data[13]}
+
+{data[14]}
+"""
+        self.dane_label.text = tmp

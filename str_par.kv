@@ -7,6 +7,7 @@
 
 <ScreenUnendlich>:
     nazwa_parafii_label: nazwa_parafii_label
+    dane_label: dane_label
 
     FloatLayout:
 
@@ -93,6 +94,25 @@
                         Rectangle:
                             pos: self.pos
                             size: self.size
+                Label:
+                    id: dane_label
+                    # text: 'Ave Caesar morituri te salutant\n' * 314  # Repeat text to make it scrollable
+                    # font_name: config.czcionka
+                    font_name: "czcionka"
+                    color: config.kolor_tekstu
+                    text_size: self.width, None
+                    size_hint_y: None  # Allow the label to have a specific height
+                    height: self.texture_size[1]  # Set height based on the label's content
+                    padding: 10, 10
+
+                    canvas.before:
+                        Color:
+                            rgba: config.kolor_tla
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    markup: True
+
 
 
 
