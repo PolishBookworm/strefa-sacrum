@@ -29,8 +29,14 @@
                 size_hint: (1,1)
                 # height: self.minimum_height
 
-                SearchBox:
+                canvas.before:
+                    Color:
+                        rgba: config.kolor_tla
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
 
+                SearchBox:
 
 #tło_pod_opcjami
         FloatLayout:
@@ -154,4 +160,57 @@
 
     background_normal: ""
     background_down: ""
-    background_color: 0, 0, 0, .1
+    #background_color: (0.8, 0.8, 0.8, 1) if root.index % 2 == 0 else (1, 1, 1, 1)
+
+    halign: 'center'
+    valign: 'middle'
+
+    text_size: self.width, None
+
+    size_hint_y: None
+    height: self.texture_size[1]
+
+
+    padding: 10, 20
+
+    canvas.before:
+        Color:
+            rgba: config.kolor_tla
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    on_index: root.on_row_index(self, self.index)
+
+<SearchBox>:
+    orientation:'vertical'
+
+    TextInput:
+        size_hint: 1, None
+        height: "36dp"
+
+        hint_text: "Wyszukaj parafię po nazwie"
+        font_name: config.czcionka
+        valign: 'middle'
+
+        hint_text_color: config.kolor_tekstu[0], config.kolor_tekstu[1], config.kolor_tekstu[2], .5     #kolor tekstu domyślnego
+        foreground_color: config.kolor_tekstu                                                           #kolor tekstu wpisywanego
+        background_color: config.kolor_tla                                                              #kolor tła
+
+        canvas.after:
+            Color:
+                rgba: config.kolor_akcentu if self.focus else config.kolor_tekstu                       #kolor ramki
+            Line:
+                width: 1
+                rectangle: self.x, self.y, self.width, self.height
+
+        background_normal: ''
+        background_active: ''
+        background_disabled_normal: ''
+        background_disabled_active: ''
+
+        on_text: root.on_text(self, self.text)
+        focus: True
+
+    SearchableRecycleView:
+        id: result_list
