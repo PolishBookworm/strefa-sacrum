@@ -86,7 +86,7 @@ class RecycleLabel(RecycleDataViewBehavior, Button):
         if value % 2 == 0:
             self.background_color = 0, 0, 0, 0
         else:
-            self.background_color = 0, 0, 0, .05
+            self.background_color = 0, 0, 0, .035
 
 
 
