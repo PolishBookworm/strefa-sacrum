@@ -35,14 +35,11 @@ class ScreenUnendlich(Screen):
     nazwa_parafii_label = ObjectProperty(None)
     dane_label = ObjectProperty(None)
 
-
     def skalibruj_to(self, dt):
         zaw = self.ids.zawiadomienie_o_falszerstwie
         lab1 = self.ids.nazwa_parafii_label
         lab2 = self.ids.dane_label
         wypelniacz = self.ids.wypelniacz
-
-        print(wypelniacz.height)
 
         wys = Window.height - dp(48)
 
@@ -50,13 +47,6 @@ class ScreenUnendlich(Screen):
             wypelniacz.height = 0
         else:
             wypelniacz.height = wys - zaw.height - lab1.height - lab2.height
-
-        print("kot")
-        print(zaw.height)
-        print(lab1.height)
-        print(lab2.height)
-        print(wys)
-        print(wypelniacz.height)
 
     def hide_powiadomienie(self):
         self.show_pow = False
