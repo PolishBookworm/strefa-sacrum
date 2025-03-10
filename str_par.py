@@ -1,4 +1,5 @@
 import kivy
+
 kivy.require('2.3.1')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
@@ -12,6 +13,7 @@ from kivy.lang import Builder
 from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.clock import Clock
 
 from wyszukiwanie.algorytmdane import daj_wszystko_po_id
 
@@ -19,11 +21,11 @@ Builder.load_file('str_par.kv')
 
 import config
 
+
 # see editing_foreword.txt
 
 
 class ScreenUnendlich(Screen):
-
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
     show_pow = BooleanProperty(True)
@@ -33,13 +35,37 @@ class ScreenUnendlich(Screen):
     nazwa_parafii_label = ObjectProperty(None)
     dane_label = ObjectProperty(None)
 
+
+    def skalibruj_to(self, dt):
+        zaw = self.ids.zawiadomienie_o_falszerstwie
+        lab1 = self.ids.nazwa_parafii_label
+        lab2 = self.ids.dane_label
+        wypelniacz = self.ids.wypelniacz
+
+        print(wypelniacz.height)
+
+        wys = Window.height - dp(48)
+
+        if (wys - zaw.height - lab1.height - lab2.height) < 0:
+            wypelniacz.height = 0
+        else:
+            wypelniacz.height = wys - zaw.height - lab1.height - lab2.height
+
+        print("kot")
+        print(zaw.height)
+        print(lab1.height)
+        print(lab2.height)
+        print(wys)
+        print(wypelniacz.height)
+
     def hide_powiadomienie(self):
         self.show_pow = False
+        self.on_size()
 
     def karta(self, k):
         app = App.get_running_app()
         screen_manager = app.root
-        screen_manager.current = 'str%d' %k
+        screen_manager.current = 'str%d' % k
 
     def wlacznik_menu(self, widget):
         if widget.state == "normal":
@@ -63,10 +89,11 @@ class ScreenUnendlich(Screen):
 
         self.set_data()
 
+
     def set_data(self):
         data = daj_wszystko_po_id(self.id_parafii, home=True)
         self.nazwa_parafii_label.text = f"{data[0]} - {data[1]}"
-        
+
         # tmp = ""
         # for datum in data[2:]:
         #     tmp += datum + '\n'
@@ -89,3 +116,5 @@ class ScreenUnendlich(Screen):
 {data[14]}
 """
         self.dane_label.text = tmp
+
+        Clock.schedule_once(self.skalibruj_to, 0)
