@@ -16,17 +16,13 @@
                 size: self.size
 
 
-        # ScrollView:
         FloatLayout:
             id: lajout
-            # do_scroll_x: False
-            # do_scroll_y: True
             size_hint: 1, None
 
 #tutaj_koktent
             BoxLayout:
                 orientation: 'vertical'
-                # size_hint_y: None
                 size_hint: (1,1)
 
         # powiadomienie o możliwych błędach
@@ -76,22 +72,6 @@
 
         # kontent
                 MassSearchBox:
-                # Label:
-                #     text: 'Quarum unam incolunt Belgae aliam Aquitani\n' #*314 Repeat text to make it scrollable
-                #     font_name: config.czcionka
-                #     color: config.kolor_tekstu
-                #     # text_size: self.width, None
-
-                #     # height: self.texture_size[1]  # Set height based on the label's content
-                #     # padding: 10, 10
-
-                #     canvas.before:
-                #         Color:
-                #             rgba: config.kolor_tla
-                #         Rectangle:
-                #             pos: self.pos
-                #             size: self.size
-
 
 
 #tło_pod_opcjami

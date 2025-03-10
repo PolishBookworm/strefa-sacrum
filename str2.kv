@@ -25,9 +25,7 @@
 #tutaj_koktent
             BoxLayout:
                 orientation: 'vertical'
-                # size_hint_y: None
                 size_hint: (1,1)
-                # height: self.minimum_height
 
                 canvas.before:
                     Color:
@@ -37,7 +35,6 @@
                         size: self.size
 
                 ParishSearchBox:
-                # SearchBox:
 
 #tło_pod_opcjami
         FloatLayout:
@@ -154,6 +151,6 @@
 
 
 <ParishSearchBox>:
-    hint: "Wyszukaj parafię po nazwie"
+    hint: "Wyszukaj parafię po nazwie lub miejscowości"
     ParishList:
         id: result_list

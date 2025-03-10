@@ -18,30 +18,20 @@
                 pos: self.pos
                 size: self.size
 
-        # ScrollView:
-        FloatLayout: # ScrollView collides with map interaction
+        FloatLayout:
             id: lajout
-            #do_scroll_x: False
-            #do_scroll_y: True
             size_hint: 1, None
 
 #tutaj_koktent
-            # FloatLayout:
             BoxLayout:
                 orientation: 'vertical'
-                # size_hint_y: None
                 size_hint: (1,1)
-                # height: self.minimum_height
 
                 MapView:
                     id: mapview
                     on_parent: self.center_on(50.0412, 21.9991)
                     zoom: 10
 
-                    # MapMarkerPopup:
-                    #     lat: 50.039593550126796
-                    #     lon: 21.999932593020528
-                    #     on_release: config.marker_popup(self.lat, self.lon)
 
 
 
@@ -171,89 +161,8 @@
 
     nazwa_parafii: nazwa_parafii
 
-    # BoxLayout: # main content layout
-    #     orientation: "vertical"
-
-    #     BoxLayout: # custom title bar
-    #         orientation: "horizontal"
-    #         size_hint_y: .6
-    #         # size_hint_y: None
-    #         height: 40
-    #         # padding: [10, 10]
-
-    #         Label:
-    #             id: nazwa_parafii
-    #             # text: "Szczegóły"
-    #             font_name: config.czcionka
-    #             color: config.kolor_tekstu
-    #             # size_hint_x: 0.8
-
-    #             halign: 'center'  # Align text to the left
-    #             valign: 'middle'  # Align text to the top
-    #             size_hint: .7, .95
-    #             text_size: self.size
-    #             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-    #             font_size: self.height / 5
-
-    #         Button: # close button
-    #             text: "X"
-    #             font_name: config.czcionka
-    #             color: config.kolor_tekstu
-    #             # size_hint_x: 0.2
-    #             # size_hint_x: 0.1
-    #             size_hint: 0.2, 0.2
-    #             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-    #             on_press: root.dismiss()
-    #             background_normal: ""
-    #             background_down: ""
-    #             background_color: config.kolor_akcentu
-
-    #     # Label:
-    #     #     id: nazwa_parafii
-    #     #     # text: "<nazwa parafii>"
-    #     #     font_name: config.czcionka
-    #     #     color: config.kolor_tekstu
-    #     #     halign: 'center'  # Align text to the left
-    #     #     valign: 'middle'  # Align text to the top
-    #     #     size_hint: .7, .95
-    #     #     text_size: self.size
-    #     #     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-    #     #     font_size: self.width / 7.1
-
-
-    #     Button: # get to the parish subsection
-    #         on_press: root.go_to_parish()
-    #         text: "Więcej informacji"
-    #         font_name: config.czcionka
-    #         color: config.kolor_tekstu
-
-    #         halign: 'center'  # Align text to the left
-    #         valign: 'middle'  # Align text to the top
-    #         # size_hint: None, None
-    #         size_hint_y: .5
-    #         text_size: self.size
-    #         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-    #         font_size: self.height / 4
-
-    #         background_normal: ""
-    #         background_down: ""
-    #         background_color: 0, 0, 0, .1
-    #         # background_color: config.kolor_akcentu
-
 
     FloatLayout: # main content layout
-        #orientation: "vertical"
-
-        #BoxLayout: # custom title bar
-            #orientation: "horizontal"
-            #size_hint_y: None
-            #height: 40
-
-            #Label:
-            #    text: "Szczegóły"
-            #    font_name: config.czcionka
-            #    color: config.kolor_tekstu
-            #    size_hint_x: 0.8
 
         Button: # close button
             text: "X"

@@ -30,6 +30,8 @@ class ScreenSieben(Screen):
         app = App.get_running_app()
         screen_manager = app.root
         screen_manager.current = 'str%d' %k
+        self.menu_wl = True
+        self.menu_wi = 0
 
     def wlacznik_menu(self, widget):
         if widget.state == "normal":

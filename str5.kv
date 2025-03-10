@@ -31,18 +31,14 @@
                 height: self.minimum_height
 
                 Label:
-                    id: opis 
-                    # text: 'Quarum unam incolunt Belgae aliam Aquitani\n' * 314  # Repeat text to make it scrollable
-                    # https://diecezja.rzeszow.pl/
+                    id: opis
                     markup: True
-                    # text: "Diecezja rzeszowska (łac. Dioecesis Resoviensis) – diecezja rzymskokatolicka erygowana przez papieża Jana Pawła II 25 marca 1992 bullą Totus tuus Poloniae populus z wydzielenia obszarów diecezji przemyskiej i diecezji tarnowskiej, sufragania metropoli przemyskiej. [i] Źródło: Wikipedia.pl [/i]"
                     text: "Diecezja rzeszowska (łac. Dioecesis Resoviensis) – diecezja rzymskokatolicka erygowana przez papieża Jana Pawła II 25 marca 1992 bullą Totus tuus Poloniae populus z wydzielenia obszarów diecezji przemyskiej i diecezji tarnowskiej, sufragania metropoli przemyskiej.\n\nBiskupi:\n    Biskup diecezjalny: bp Jan Wątroba (od 2013)\n    Biskup senior: bp Kazimierz Górny (od 2013)\n    Biskup senior: bp Edward Białogłowski (od 2022)\nGłówne świątynie:\n    Katedra:\n        Najświętszego Serca Pana Jezusa w Rzeszowie\n    Kolegiaty:\n        Bożego Ciała w Bieczu\n        Wniebowzięcia Najświętszej Maryi Panny w Jaśle\n        Wszystkich Świętych w Kolbuszowej\n        Niepokalanego Poczęcia Najświętszej Maryi Panny i Bożego Ciała w Strzyżowie\n    Bazyliki:\n        Wniebowzięcia NMP, oo. bernardyni, Rzeszów\n        Narodzenia NMP, Gorlice\n        Matki Bożej Saletyńskiej, xx. saletyni, Dębowiec\n[i] Źródło: Wikipedia.pl [/i]"
                     font_name: "czcionka"
-                    # font_name: config.czcionka
                     color: config.kolor_tekstu
                     text_size: self.width, None
-                    size_hint_y: None  # Allow the label to have a specific height
-                    height: self.texture_size[1]  # Set height based on the label's content
+                    size_hint_y: None
+                    height: self.texture_size[1]
                     padding: 10, 10
 
                     canvas.before:
