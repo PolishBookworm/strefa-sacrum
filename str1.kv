@@ -48,7 +48,7 @@
 
                     Label:
                         id: pow
-                        text: "Godziny Mszy mogą być nieaktualne. Zalecamy sprawdzenie ich na stronie parafii."
+                        text: "Godziny Mszy mogą być nieaktualne. Zalecamy sprawdzenie ich na stronie internetowej parafii."
                         font_name: config.czcionka
                         color: config.kolor_tekstu
 
@@ -75,21 +75,22 @@
                         on_press: root.hide_powiadomienie()
 
         # kontent
-                Label:
-                    text: 'Quarum unam incolunt Belgae aliam Aquitani\n' #*314 Repeat text to make it scrollable
-                    font_name: config.czcionka
-                    color: config.kolor_tekstu
-                    # text_size: self.width, None
+                MassSearchBox:
+                # Label:
+                #     text: 'Quarum unam incolunt Belgae aliam Aquitani\n' #*314 Repeat text to make it scrollable
+                #     font_name: config.czcionka
+                #     color: config.kolor_tekstu
+                #     # text_size: self.width, None
 
-                    # height: self.texture_size[1]  # Set height based on the label's content
-                    # padding: 10, 10
+                #     # height: self.texture_size[1]  # Set height based on the label's content
+                #     # padding: 10, 10
 
-                    canvas.before:
-                        Color:
-                            rgba: config.kolor_tla
-                        Rectangle:
-                            pos: self.pos
-                            size: self.size
+                #     canvas.before:
+                #         Color:
+                #             rgba: config.kolor_tla
+                #         Rectangle:
+                #             pos: self.pos
+                #             size: self.size
 
 
 
@@ -205,3 +206,9 @@
             on_state: root.wlacznik_menu(self)
             background_down: join("resources","menu_button.png")
             background_normal: join("resources", "menu_button.png")
+
+
+<MassSearchBox>:
+    hint: "Wyszukaj godzinę Mszy Świętej (np. 15:00)"
+    MassList:
+        id: result_list

@@ -1,3 +1,5 @@
+# wyszukiwanie Mszy
+
 import kivy
 kivy.require('2.3.1')
 from kivy.app import App
@@ -13,6 +15,25 @@ from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
 
+from kivy.uix.recycleview import RecycleView
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
+from kivy.uix.recycleboxlayout import RecycleBoxLayout
+from kivy.uix.recycleview.views import RecycleDataViewBehavior
+from kivy.clock import Clock
+from kivy.uix.button import Button
+
+# from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
+from wyszukiwanie.algorytmdane import daj_liste_mszy
+from wyszukiwanie.skrypciki import nazwa_parafii
+
+from str_par import ScreenUnendlich
+
+from search_box import RecycleLabel, SearchableRecycleView, SearchBox
+
+from kivy.uix.dropdown import DropDown # do wyboru rodzaju, todo
+
+
 Builder.load_file('str1.kv')
 
 import config
@@ -26,24 +47,6 @@ class ScreenEins(Screen):
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
     show_pow = BooleanProperty(True)
-
-    # wysokosc_opcji = StringProperty()
-    # szerokosc_opcji = StringProperty()
-    # wysokosc_menu = NumericProperty()
-
-    # czcionka = StringProperty()
-    # kolor_tekstu = ListProperty()
-    # kolor_tla = ListProperty()
-    # kolor_akcentu = ListProperty()
-
-    # s0_name = StringProperty()
-    # s1_name = StringProperty()
-    # s2_name = StringProperty()
-    # s3_name = StringProperty()
-    # s4_name = StringProperty()
-    # s5_name = StringProperty()
-    # s6_name = StringProperty()
-    # s7_name = StringProperty()
 
     def hide_powiadomienie(self):
         self.show_pow = False
@@ -72,3 +75,65 @@ class ScreenEins(Screen):
         opcie.height = wys
         lajout.height = wys
         pudlo.pos = (0, y_position)
+
+
+
+class MassList(SearchableRecycleView):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        items = daj_liste_mszy(0000, home=True)
+        self.all_items = []
+        for item in items:
+            res = []
+            tmp = item.split(",")
+            id_par = int(tmp[2])
+            res.append(f"[b]{tmp[0][:-2]}:{tmp[0][-2:]}{tmp[1]}[/b] - {nazwa_parafii(id_par, home=True)}")
+            res.append(id_par)
+            self.all_items.append(res)
+        # print(self.all_items)
+
+        self.update_data(self.all_items)
+
+
+
+    # def update_data(self, items):
+    #     """Update the RecycleView data dynamically."""
+    #     if items is None:
+    #         items = []  # Ensure items is always a list
+
+    #     self.data = [{'text': item[0], 'id_parafii': item[1], 'index': idx} for idx, item in enumerate(items)]  # Correct data format
+
+    #     self.refresh_from_data()  # Ensures UI updates dynamically
+    #     self.refresh_from_layout()
+
+
+    def filter_items(self, query):
+        """Filter the list based on user input."""
+        if not self.all_items:
+            return
+
+        if ":" not in query:
+            return
+
+        query = query.strip().split(":")
+        query = query[0] + query[1]
+        query = int(query)
+
+        items = daj_liste_mszy(query, home=True)
+        filtered = []
+        for item in items:
+            res = []
+            tmp = item.split(",")
+            id_par = int(tmp[2])
+            res.append(f"[b]{tmp[0][:-2]}:{tmp[0][-2:]}{tmp[1]}[/b] - {nazwa_parafii(id_par, home=True)}")
+            res.append(id_par)
+            filtered.append(res)
+
+        # filtered = [item for item in self.all_items if query in item[0].lower()]
+
+        self.update_data(filtered)  # Update UI with filtered results
+
+class MassSearchBox(SearchBox):
+    hint = StringProperty()

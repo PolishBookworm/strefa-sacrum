@@ -21,7 +21,8 @@ from kivy.graphics import Rectangle
 
 from kivy_garden.mapview import MapView, MapMarkerPopup
 
-from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
+from wyszukiwanie.algorytmdane import daj_wszystko_po_id
+from wyszukiwanie.skrypciki import liczba_rekordow
 
 from str_par import ScreenUnendlich
 

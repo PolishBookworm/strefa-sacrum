@@ -7,7 +7,9 @@ wysokosc_opcji = "48dp"
 szerokosc_opcji = "160dp"
 wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->wysokość pojedyńczej opcji w dp, +48-> wysokość menu_button w dp
 czcionka = os.path.join("resources","ChakraPetch-Regular.ttf")
-czcionka_bold = os.path.join("resources","ChakraPetch-Bold.ttf")
+# czcionka_bold = os.path.join("resources","ChakraPetch-Bold.ttf")
+# czcionka_italic = os.path.join("resources","ChakraPetch-Italic.ttf")
+# czcionka_bolditalic = os.path.join("resources","ChakraPetch-BoldItalic.ttf")
 kolor_tekstu = [.2, .15686, .07059, 1]          #~czarny
 kolor_tla = [.97, .97, .97, 1]                  #~biały
 kolor_akcentu = [.79216, .64314, .31765, 1]     #złoty
@@ -26,6 +28,5 @@ s7_name = "O nas"
 import kivy
 kivy.require('2.3.1')
 from kivy.core.text import LabelBase
-from kivy.uix.label import Label
 
-LabelBase.register(name="czcionka", fn_regular=czcionka, fn_italic=None, fn_bold=czcionka_bold, fn_bolditalic=None)
+LabelBase.register(name="czcionka", fn_regular=czcionka, fn_italic=os.path.join("resources","ChakraPetch-Italic.ttf"), fn_bold=os.path.join("resources","ChakraPetch-Bold.ttf"), fn_bolditalic=os.path.join("resources","ChakraPetch-BoldItalic.ttf"))

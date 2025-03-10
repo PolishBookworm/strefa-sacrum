@@ -16,13 +16,13 @@ def daj_wszystko_po_id(id_parafii, home=False):
             return(row)
 
 #znajdz msze na dana godzine
-def daj_liste_mszy(godzina, home=False):
+def daj_liste_mszy(godzina, home=False, tryb=0): # tryb: 0 - niedziela, 1 - nienakazane, 2 - dni powszednie
     plik = "posortowane.csv"
     if home: # to usuwa problem ze ścieżkami
         plik = os.path.join("wyszukiwanie",plik)
 
     csv_file = csv.reader(open(plik, "r", encoding='utf-8'), delimiter=';')
-    lista_mszy = next(csv_file)
+    lista_mszy = next(csv_file) # tu uwzględnić tryb
     return lista_mszy[binarprzejscie1(lista_mszy, godzina):]
 
 def binarprzejscie1(arr, x):
@@ -48,14 +48,6 @@ def binary_search(arr, low, high, x):
             return len(arr)
         else:
             return -1
-
-def liczba_rekordow(home=False):
-    plik = "daneprzyklad.csv"
-    if home: # to usuwa problem ze ścieżkami
-        plik = os.path.join("wyszukiwanie",plik)
-    with open(plik, 'r', encoding='utf-8') as f:
-        lines = len(f.readlines())
-        return lines
 
 # print(daj_liste_mszy(1700)) #ta linijka co wyjdzie to wszystkie msze gdzie dla mszy wiemy tak
 #czy jest ona

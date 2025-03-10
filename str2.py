@@ -23,9 +23,12 @@ from kivy.uix.recycleboxlayout import RecycleBoxLayout
 from kivy.uix.recycleview.views import RecycleDataViewBehavior
 from kivy.clock import Clock
 
-from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
+from wyszukiwanie.skrypciki import nazwa_parafii, liczba_rekordow
+# from wyszukiwanie.algorytmdane import daj_wszystko_po_id, liczba_rekordow
 
 from str_par import ScreenUnendlich
+
+from search_box import RecycleLabel, SearchableRecycleView, SearchBox
 
 Builder.load_file('str2.kv')
 
@@ -64,82 +67,30 @@ class ScreenZwei(Screen):
         lajout.height = wys
         pudlo.pos = (0, y_position)
 
+class ParishList(SearchableRecycleView):
 
-# class RecycleLabel(RecycleDataViewBehavior, Label):
-class RecycleLabel(RecycleDataViewBehavior, Button):
-    """ Custom Label for RecycleView items. """
-    text = StringProperty("")  # Ensures text appears in labels
-    id_parafii = NumericProperty()
-    index = NumericProperty()
-
-    def go_to_parish(self):
-        # self.dismiss()
-        app = App.get_running_app()
-        sm = app.root
-        name = f"par{self.id_parafii}"
-        if not sm.has_screen(name):
-            sm.add_widget(ScreenUnendlich(name=name, id_parafii=self.id_parafii))
-        sm.current = name
-
-    def on_row_index(self, instance, value):
-        """ Dynamically change background color based on row index """
-        if value % 2 == 0:
-            self.background_color = 0, 0, 0, 0
-        else:
-            self.background_color = 0, 0, 0, .035
-
-
-
-class SearchableRecycleView(RecycleView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        Clock.schedule_once(self.set_viewclass, 0)
-
-        # Make sure layout updates properly
-        self.layout_manager = RecycleBoxLayout(orientation="vertical", spacing=0, size_hint_y=None)
-        self.layout_manager.bind(minimum_height=self.layout_manager.setter("height"))
-        self.add_widget(self.layout_manager)
-
-
-        """Jak coś ma 3 linijki to zmienić 54dp na 66dp. Jak wygląda brzydko to napisać. MZ"""
-        # Ensure items have a proper height
-        self.layout_manager.default_size = None, "54dp"  # 40px height per item
-        self.layout_manager.default_size_hint = 1, None  # Full width, fixed height
-
-
-        # Initialize list of items
-        # self.all_items = [
-        #     'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'
-        # ]
 
         n = liczba_rekordow(home=True)
 
         self.all_items = []
         for i in range(n):
-            tmp = daj_wszystko_po_id(i, home=True)
-            self.all_items.append((f"{tmp[0]} - {tmp[1]}",i))
-
-        # tmp = [
-        #     'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Mango', 'Orange', 'Peach'
-        # ]
-
-        # self.all_items = []
-        # for i in range(len(tmp)):
-        #     self.all_items.append((tmp[i],i))
+            # tmp = daj_wszystko_po_id(i, home=True)
+            # self.all_items.append((f"{tmp[0]} - {tmp[1]}",i))
+            self.all_items.append((nazwa_parafii(i,home=True),i))
 
         self.update_data(self.all_items)  # Load all items initially
 
+    # def update_data(self, items):
+    #     """Update the RecycleView data dynamically."""
+    #     if items is None:
+    #         items = []  # Ensure items is always a list
 
-    def update_data(self, items):
-        """Update the RecycleView data dynamically."""
-        if items is None:
-            items = []  # Ensure items is always a list
+    #     self.data = [{'text': item[0], 'id_parafii': item[1], 'index': idx} for idx, item in enumerate(items)]  # Correct data format
 
-        self.data = [{'text': item[0], 'id_parafii': item[1], 'index': idx} for idx, item in enumerate(items)]  # Correct data format
-
-        self.refresh_from_data()  # Ensures UI updates dynamically
-        self.refresh_from_layout()
+    #     self.refresh_from_data()  # Ensures UI updates dynamically
+    #     self.refresh_from_layout()
 
 
     def filter_items(self, query):
@@ -154,15 +105,5 @@ class SearchableRecycleView(RecycleView):
         self.update_data(filtered)  # Update UI with filtered results
 
 
-    def set_viewclass(self, dt):
-        self.viewclass = "RecycleLabel"
-
-
-
-class SearchBox(BoxLayout):
-
-    def on_text(self, instance, value):
-        """Update the search results when text changes."""
-        self.ids.result_list.filter_items(value)
-
-
+class ParishSearchBox(SearchBox):
+    hint = StringProperty()
