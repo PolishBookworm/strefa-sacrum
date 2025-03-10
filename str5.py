@@ -12,6 +12,7 @@ from kivy.lang import Builder
 from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.clock import Clock
 
 Builder.load_file('str5.kv')
 
@@ -24,6 +25,18 @@ class ScreenFuenf(Screen):
 
     menu_wl = BooleanProperty()
     menu_wi = NumericProperty()
+
+    def skalibruj_to(self, dt):
+        opis = self.ids.opis
+        wypelniacz = self.ids.wypelniacz
+
+        wys = Window.height - dp(48)
+
+        if (wys - opis.height) < 0:
+            wypelniacz.height = 0
+        else:
+            wypelniacz.height = wys - opis.height
+
 
     def karta(self, k):
         app = App.get_running_app()
@@ -51,3 +64,5 @@ class ScreenFuenf(Screen):
         opcie.height = wys
         lajout.height = wys
         pudlo.pos = (0, y_position)
+
+        Clock.schedule_once(self.skalibruj_to, 0)

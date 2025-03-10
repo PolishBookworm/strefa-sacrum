@@ -48,6 +48,17 @@
                             pos: self.pos
                             size: self.size
 
+                Label:
+                    id: wypelniacz
+                    size_hint: 1, None
+
+                    canvas.before:
+                        Color:
+                            rgba: config.kolor_tla
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
 
 
 #tło_pod_opcjami
