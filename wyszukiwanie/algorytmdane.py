@@ -31,7 +31,7 @@ def binarprzejscie1(arr, x):
     elif x > int(arr[-1].split(',')[0]):
         return len(arr)
     else:
-        print("wchodze tutaj")
+        #print("wchodze tutaj")
         return binary_search(arr, 0, len(arr) - 1, x) + 1
 
 def binary_search(arr, low, high, x):
