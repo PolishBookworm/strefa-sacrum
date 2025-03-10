@@ -13,7 +13,10 @@ def daj_wszystko_po_id(id_parafii, home=False):
     for row in csv_plikdwpid:
         c_dwpid +=1
         if c_dwpid == id_parafii:
-            return(row)
+            if id_parafii!=0:
+                return(row)
+            else:
+                return [row[0][1:]]+row[1:]
 
 #znajdz msze na dana godzine
 def daj_liste_mszy(godzina, home=False, tryb=0): # tryb: 0 - niedziela, 1 - nienakazane, 2 - dni powszednie
