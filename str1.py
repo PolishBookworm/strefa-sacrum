@@ -1,7 +1,7 @@
 # wyszukiwanie Mszy
 
 import kivy
-kivy.require('2.3.1')
+kivy.require('2.3.0')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
@@ -121,21 +121,23 @@ class MassList(SearchableRecycleView):
 
         query = query.strip().split(":")
         query = query[0] + query[1]
-        query = int(query)
+        try:
+            query = int(query)
+        except ValueError:
+            pass
+        else:
 
-        items = daj_liste_mszy(query, home=True)
-        filtered = []
-        for item in items:
-            res = []
-            tmp = item.split(",")
-            id_par = int(tmp[2])
-            res.append(f"[b]{tmp[0][:-2]}:{tmp[0][-2:]}{tmp[1]}[/b] - {nazwa_parafii(id_par, home=True)}")
-            res.append(id_par)
-            filtered.append(res)
+            items = daj_liste_mszy(query, home=True)
+            filtered = []
+            for item in items:
+                res = []
+                tmp = item.split(",")
+                id_par = int(tmp[2])
+                res.append(f"[b]{tmp[0][:-2]}:{tmp[0][-2:]}{tmp[1]}[/b] - {nazwa_parafii(id_par, home=True)}")
+                res.append(id_par)
+                filtered.append(res)
 
-        # filtered = [item for item in self.all_items if query in item[0].lower()]
-
-        self.update_data(filtered)  # Update UI with filtered results
+            self.update_data(filtered)  # Update UI with filtered results
 
 class MassSearchBox(SearchBox):
     hint = StringProperty()

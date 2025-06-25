@@ -1,7 +1,7 @@
 # wyszukiwanie parafii
 
 import kivy
-kivy.require('2.3.1')
+kivy.require('2.3.0')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label

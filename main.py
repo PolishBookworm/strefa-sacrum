@@ -1,5 +1,5 @@
 import kivy
-kivy.require('2.3.1')
+kivy.require("2.3.0")
 from kivy.app import App
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty

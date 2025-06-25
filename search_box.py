@@ -1,7 +1,7 @@
 # wyszukiwanie parafii
 
 import kivy
-kivy.require('2.3.1')
+kivy.require('2.3.0')
 from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty
 from kivy.lang import Builder
 from kivy.uix.button import Button

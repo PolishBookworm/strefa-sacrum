@@ -26,7 +26,7 @@ s7_name = "O nas"
 #koniec bloku Z
 
 import kivy
-kivy.require('2.3.1')
+kivy.require('2.3.0')
 from kivy.core.text import LabelBase
 
 LabelBase.register(name="czcionka", fn_regular=czcionka, fn_italic=os.path.join("resources","ChakraPetch-Italic.ttf"), fn_bold=os.path.join("resources","ChakraPetch-Bold.ttf"), fn_bolditalic=os.path.join("resources","ChakraPetch-BoldItalic.ttf"))

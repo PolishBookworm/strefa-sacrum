@@ -18,7 +18,8 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (leave empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas
+#source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = 
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -28,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of directory to exclude (leave empty to not exclude anything)
 #source.exclude_dirs = tests, bin, venv
-source.exclude_dirs = cache, kivy_venv
+source.exclude_dirs = cache, kivy_venv, venv
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
@@ -76,7 +77,8 @@ orientation = portrait
 # author = © Copyright Info
 
 # Kivy version to use
-osx.kivy_version = 2.2.0
+#osx.kivy_version = 2.2.0
+osx.kivy_version = 2.3.0
 
 #
 # Android specific
