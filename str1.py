@@ -121,23 +121,20 @@ class MassList(SearchableRecycleView):
 
         query = query.strip().split(":")
         query = query[0] + query[1]
-        try:
-            query = int(query)
-        except ValueError:
-            pass
-        else:
+        query = int(query)
+        
+        items = daj_liste_mszy(query, home=True)
+        filtered = []
+        for item in items:
+            res = []
+            tmp = item.split(",")
+            id_par = int(tmp[2])
+            res.append(f"[b]{tmp[0][:-2]}:{tmp[0][-2:]}{tmp[1]}[/b] - {nazwa_parafii(id_par, home=True)}")
+            res.append(id_par)
+            filtered.append(res)
 
-            items = daj_liste_mszy(query, home=True)
-            filtered = []
-            for item in items:
-                res = []
-                tmp = item.split(",")
-                id_par = int(tmp[2])
-                res.append(f"[b]{tmp[0][:-2]}:{tmp[0][-2:]}{tmp[1]}[/b] - {nazwa_parafii(id_par, home=True)}")
-                res.append(id_par)
-                filtered.append(res)
+        self.update_data(filtered)  # Update UI with filtered results
 
-            self.update_data(filtered)  # Update UI with filtered results
 
 class MassSearchBox(SearchBox):
     hint = StringProperty()

@@ -1,5 +1,5 @@
 ! blok Z przenoszę do config.py, stamtąd można te stałe importować, bo inaczej się życie komplikuje
-zamiast root.cos lub self.cos będzie config.cos
+zamiast root.coś lub self.coś będzie config.coś
 OP
 
 
@@ -108,10 +108,10 @@ OP
 
 
 
-python3 -m venv kivy_venv // creates venv
-source kivy_venv/bin/activate // activates venv
+python3 -m venv venv // creates venv
+source venv/bin/activate // activates venv
 python -m pip install "kivy[base]" // installs kivy
-deactivate kivy_venv // nomen omen
+deactivate venv // nomen omen
 python -m pip install mapview // nomen omen
 (lub pip install kivy_garden, potem: garden install mapview)
 
