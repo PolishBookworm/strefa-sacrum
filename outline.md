@@ -24,3 +24,5 @@
 - [ ] map marker img - sth funny
 - [ ] popup z mapy - ładniejszy
 - [ ] ładna czcionka
+- [ ] paczkować tylko to, co trzeba
+- [ ] wyszukiwanie Mszy lepiej 
