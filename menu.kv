@@ -6,6 +6,7 @@
 
 <DefaultScreen>:
     FloatLayout:
+        id: layout1
 
 #ten_złoty_pasek_na_górze
         canvas:
@@ -16,34 +17,35 @@
                 size: self.size
 
         ScrollView:
-            id: lajout
+            id: layout2
             #do_scroll_x: False
             #do_scroll_y: True
             size_hint: 1, None
 
 #tutaj_koktent
             BoxLayout:
+                id: main_content
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
 
-                Label:
-                    markup: True
-                    text: "Alleluja!\nWitamy w aplikacji [b]Strefa Sacrum[/b]."
-                    # text: 'Gallia est omnis divisa in partes tres\n' * 314 
-                    font_name: config.czcionka
-                    color: config.kolor_tekstu
-                    text_size: self.width, None
-                    size_hint_y: None  # Allow the label to have a specific height
-                    height: self.texture_size[1]  # Set height based on the label's content
-                    padding: 10, 10
+                # Label:
+                #     markup: True
+                #     text: "Alleluja!\nWitamy w aplikacji [b]Strefa Sacrum[/b]."
+                #     # text: 'Gallia est omnis divisa in partes tres\n' * 314 
+                #     font_name: config.czcionka
+                #     color: config.kolor_tekstu
+                #     text_size: self.width, None
+                #     size_hint_y: None  # Allow the label to have a specific height
+                #     height: self.texture_size[1]  # Set height based on the label's content
+                #     padding: 10, 10
 
-                    canvas.before:
-                        Color:
-                            rgba: config.kolor_tla
-                        Rectangle:
-                            pos: self.pos
-                            size: self.size
+                #     canvas.before:
+                #         Color:
+                #             rgba: config.kolor_tla
+                #         Rectangle:
+                #             pos: self.pos
+                #             size: self.size
 
 
 
