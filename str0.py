@@ -15,7 +15,7 @@ from kivy import metrics
 from kivy.metrics import dp
 from kivy.core.window import Window
 
-from menu import DefaultScreen
+from menu import HamburgerMenu
 
 import config
 
@@ -23,35 +23,34 @@ Builder.load_file('str0.kv')
 
 # see editing_foreword.txt
 
-class ScreenNull(DefaultScreen):
+class ScreenNull(Screen):
 
-    # menu_wl = BooleanProperty()
-    # menu_wi = NumericProperty()
+    menu_wl = BooleanProperty()
+    menu_wi = NumericProperty()
 
-    # def karta(self, k):
-    #     app = App.get_running_app()
-    #     screen_manager = app.root
-    #     screen_manager.current = 'str%d' %k
-    #     self.menu_wl = True
-    #     self.menu_wi = 0
+    def karta(self, k):
+        app = App.get_running_app()
+        screen_manager = app.root
+        screen_manager.current = 'str%d' %k
+        self.menu_wl = True
+        self.menu_wi = 0
 
-    # def wlacznik_menu(self, widget):
-    #     if widget.state == "normal":
-    #         self.menu_wl = True
-    #         self.menu_wi = 0
-    #     else:
-    #         self.menu_wl = False
-    #         self.menu_wi = 1
+    def wlacznik_menu(self, widget):
+        if widget.state == "normal":
+            self.menu_wl = True
+            self.menu_wi = 0
+        else:
+            self.menu_wl = False
+            self.menu_wi = 1
 
-    # def on_size(self, *args):
-    #     lajout = self.ids.lajout
-    #     opcie = self.ids.opcie
-    #     pudlo = self.ids.pudlo
+    def on_size(self, *args):
+        lajout = self.ids.lajout
+        opcie = self.ids.menu.ids.opcie
+        pudlo = self.ids.menu.ids.pudlo
 
-    #     wys = Window.height - dp(48)
-    #     y_position = self.height - dp(config.wysokosc_menu)
+        wys = Window.height - dp(48)
+        y_position = self.height - dp(config.wysokosc_menu)
 
-    #     opcie.height = wys
-    #     lajout.height = wys
-    #     pudlo.pos = (0, y_position)
-    pass
+        opcie.height = wys
+        lajout.height = wys
+        pudlo.pos = (0, y_position)
