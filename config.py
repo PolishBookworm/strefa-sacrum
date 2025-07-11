@@ -1,8 +1,6 @@
 import os
 
 #blok Z
-# menu_wl = True
-# menu_wi = 0
 wysokosc_opcji = "48dp"
 szerokosc_opcji = "160dp"
 wysokosc_menu = 8 * 48 + 48  #8-> liczba podstron, *48->wysokość pojedyńczej opcji w dp, +48-> wysokość menu_button w dp

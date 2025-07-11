@@ -14,7 +14,7 @@
 - [ ] przejrzeć licencje: kivy, mapview (MIT), https://www.openstreetmap.org/copyright, ...
 - [ ] buildozer.spec jak będziemy paczkować (jakie moduły w pythonie; potrzebne permissions np. gps, internet; package.domain; ...)
 - [X] disclaimer (sprawdzić aktualność, bo chodzi o syntezę)
-- [ ] dodać podstronę dla danych parafii
+- [X] dodać podstronę dla danych parafii
 - [X] ogarnąć polskie znaki w danych - solve: do open dać: `encoding='utf-8'`
 - [X] ścieżki plików w wyszukiwanie/
 - [X] W tych danych Msze powinny być osobno na niedziele, osobno na dni powszednie etc.
