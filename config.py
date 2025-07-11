@@ -11,6 +11,8 @@ kolor_tekstu = [.2, .15686, .07059, 1]          #~czarny
 kolor_tla = [.97, .97, .97, 1]                  #~biały
 kolor_akcentu = [.79216, .64314, .31765, 1]     #złoty
 kolor_informacyjny = [.97255, .97255, .62745, 1]   #żółty
+kolor_bialy = [0,0,0,0]
+kolor_szary = [0,0,0,.1]
 
 s0_name = "Strona główna"
 s1_name = "Znajdź Mszę"

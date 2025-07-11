@@ -57,8 +57,8 @@ class ScreenDrei(Screen):
 
     def on_size(self, *args):
         lajout = self.ids.lajout
-        opcie = self.ids.opcie
-        pudlo = self.ids.pudlo
+        opcie = self.ids.menu.ids.opcie
+        pudlo = self.ids.menu.ids.pudlo
 
         wys = Window.height - dp(48)
         y_position = self.height - dp(config.wysokosc_menu)
