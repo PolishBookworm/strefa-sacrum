@@ -22,7 +22,7 @@
 # Będzie lepiej
 - [ ] set map to user location
 - [ ] map marker img - sth funny
-- [ ] popup z mapy - ładniejszy
+- [X] popup z mapy - ładniejszy
 - [ ] ładna czcionka
 - [ ] paczkować tylko to, co trzeba
 - [ ] wyszukiwanie Mszy lepiej 
