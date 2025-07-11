@@ -25,4 +25,4 @@
 - [X] popup z mapy - ładniejszy
 - [ ] ładna czcionka
 - [ ] paczkować tylko to, co trzeba
-- [ ] wyszukiwanie Mszy lepiej 
+- [X] wyszukiwanie Mszy lepiej 

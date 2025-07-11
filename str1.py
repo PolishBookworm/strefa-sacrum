@@ -117,11 +117,23 @@ class MassList(SearchableRecycleView):
             return
 
         if ":" not in query:
-            return
-
-        query = query.strip().split(":")
-        query = query[0] + query[1]
-        query = int(query)
+            try:
+                query = int(query)
+                if query < 100:
+                    query *= 100
+            except ValueError:
+                query = 0
+        else:
+            query = query.strip().split(":")
+            match len(query[1]):
+                case 0:
+                    query[1] = "00"
+                case 1:
+                    query[1] += "0"
+                case _:
+                    pass
+            query = query[0] + query[1]
+            query = int(query)
         
         items = daj_liste_mszy(query, home=True)
         filtered = []
