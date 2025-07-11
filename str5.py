@@ -1,3 +1,5 @@
+# o diecezji
+
 import kivy
 kivy.require('2.3.0')
 from kivy.app import App
@@ -17,6 +19,8 @@ from kivy.clock import Clock
 Builder.load_file('str5.kv')
 
 import config
+
+import webbrowser
 
 # see editing_foreword.txt
 
@@ -66,3 +70,6 @@ class ScreenFuenf(Screen):
         pudlo.pos = (0, y_position)
 
         Clock.schedule_once(self.skalibruj_to, 0)
+
+    def open_link(self):
+        webbrowser.open("https://diecezja.rzeszow.pl/")

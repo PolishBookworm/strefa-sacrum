@@ -1,5 +1,3 @@
-# o diecezji
-
 #:kivy 2.3.0
 #:import join os.path.join
 #:import config config
@@ -26,6 +24,7 @@
 
 #tutaj_koktent
             BoxLayout:
+            # FloatLayout:
                 orientation: 'vertical'
                 size_hint_y: None
                 height: self.minimum_height
@@ -34,6 +33,27 @@
                     id: opis
                     markup: True
                     text: "Diecezja rzeszowska (łac. Dioecesis Resoviensis) – diecezja rzymskokatolicka erygowana przez papieża Jana Pawła II 25 marca 1992 bullą Totus tuus Poloniae populus z wydzielenia obszarów diecezji przemyskiej i diecezji tarnowskiej, sufragania metropoli przemyskiej.\n\nBiskupi:\n    Biskup diecezjalny: bp Jan Wątroba (od 2013)\n    Biskup senior: bp Kazimierz Górny (od 2013)\n    Biskup senior: bp Edward Białogłowski (od 2022)\nGłówne świątynie:\n    Katedra:\n        Najświętszego Serca Pana Jezusa w Rzeszowie\n    Kolegiaty:\n        Bożego Ciała w Bieczu\n        Wniebowzięcia Najświętszej Maryi Panny w Jaśle\n        Wszystkich Świętych w Kolbuszowej\n        Niepokalanego Poczęcia Najświętszej Maryi Panny i Bożego Ciała w Strzyżowie\n    Bazyliki:\n        Wniebowzięcia NMP, oo. bernardyni, Rzeszów\n        Narodzenia NMP, Gorlice\n        Matki Bożej Saletyńskiej, xx. saletyni, Dębowiec\n[i] Źródło: Wikipedia.pl [/i]"
+                    font_name: "czcionka"
+                    color: config.kolor_tekstu
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: 10, 10
+
+                    canvas.before:
+                        Color:
+                            rgba: config.kolor_tla
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Button:
+                    text: "Strona internetowa diecezji"
+                    on_press: root.open_link()
+
+                    background_normal: ""
+                    background_down: ""
+                    background_color: config.kolor_szary
+
                     font_name: "czcionka"
                     color: config.kolor_tekstu
                     text_size: self.width, None

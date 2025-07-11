@@ -36,6 +36,63 @@
             id: menu
             current_tab: 3
 
+<ParishPopup>:
+    title: "" # rm default title
+    title_size: 0
+    separator_height: 0 # rm ugly stripe
+    background: "" # rm default bg
+    size_hint: (None, None)
+    size: "240dp", "192dp"
+    # size_hint: (0.25, 0.3)
+    background_color: config.kolor_tla
+
+    nazwa_parafii: nazwa_parafii
+
+
+    FloatLayout: # main content layout
+
+        Button: # close button
+            text: "X"
+            font_name: config.czcionka
+            color: config.kolor_tekstu
+            size_hint: None, None
+            size: "36dp", "36dp"
+            pos_hint: {"top": 1.13, "right": 1}
+            on_press: root.dismiss()
+            background_normal: ""
+            background_down: ""
+            background_color: config.kolor_akcentu
+
+        Label:
+            id: nazwa_parafii
+            # text: "<nazwa parafii>"
+            font_name: config.czcionka
+            color: config.kolor_tekstu
+            halign: 'center'  # Align text to the left
+            valign: 'middle'  # Align text to the top
+            size_hint: .95, .5
+            text_size: self.size
+            pos_hint: {'center_x': 0.5, 'center_y': 0.655}
+            font_size: self.width / 12
+
+
+        Button: # get to the parish subsection
+            on_press: root.go_to_parish()
+            text: "Więcej informacji"
+            font_name: config.czcionka
+            color: config.kolor_tekstu
+
+            halign: 'center'  # Align text to the left
+            valign: 'middle'  # Align text to the top
+            size_hint: .95, .35
+            #text_size: self.size
+            pos_hint: {'center_x': 0.5, "y": 0.02}
+            #font_size: self.width / 7
+
+            background_normal: ""
+            background_down: ""
+            background_color: config.kolor_szary
+
 
 <ParishMarker>:
     on_release: root.marker_popup()
