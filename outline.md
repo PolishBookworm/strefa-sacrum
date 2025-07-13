@@ -7,7 +7,6 @@
 5. O diecezji
 6. Sponsorzy i partnerzy
 7. O nas
-
 8. Podstrona każdej parafii -- jako jedna strona, która przyjmuje argument: jaka parafia i wyświetla odpowiednio (nie zakładka) - str_par
 
 # O czym warto nie zapomnieć:
@@ -18,6 +17,7 @@
 - [X] ogarnąć polskie znaki w danych - solve: do open dać: `encoding='utf-8'`
 - [X] ścieżki plików w wyszukiwanie/
 - [X] W tych danych Msze powinny być osobno na niedziele, osobno na dni powszednie etc.
+- [ ] Dodać formy kontaktu do zakładki "O nas"
 
 # Będzie lepiej
 - [ ] set map to user location
@@ -26,3 +26,4 @@
 - [ ] ładna czcionka
 - [ ] paczkować tylko to, co trzeba
 - [X] wyszukiwanie Mszy lepiej 
+- [ ] Powitanie i o nas - jakiś ładny tekst
