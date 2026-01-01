@@ -11,4 +11,4 @@
 
 Chcemy zdobyć 100 użytkowników (@Karolina)
 
-Dane trzeba zdobyć jak najszybciej, fajnie by było, żeby aplikację można było wypuscić do końca lipca
+Dane trzeba zdobyć jak najszybciej, fajnie by było, żeby aplikację można było wypuścić do końca lipca
